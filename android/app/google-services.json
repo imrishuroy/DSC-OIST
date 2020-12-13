@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "711254281227",
+    "project_id": "dsc-oist",
+    "storage_bucket": "dsc-oist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711254281227:android:af2736f5a7e99bc108cb0e",
+        "android_client_info": {
+          "package_name": "com.sixteenbrains.dsc_oist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711254281227-jfmciafmfgs7mlcuo3bg8rbjgepi97f5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixteenbrains.dsc_oist",
+            "certificate_hash": "e98b528275b4cf4883cfa8252427e65b669af6e4"
+          }
+        },
+        {
+          "client_id": "711254281227-bj3phpd5ngndqhec68vb20drhr77su7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ6QwMDWY3D4xKOrQmV9oQ-ie8naPdex4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711254281227-bj3phpd5ngndqhec68vb20drhr77su7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

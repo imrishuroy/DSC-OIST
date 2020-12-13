@@ -1,47 +1,44 @@
+import 'package:dsc_oist/screens/event_page.dart';
+import 'package:dsc_oist/screens/team.dart';
+import 'package:dsc_oist/screens/team_screen.dart';
+import 'package:dsc_oist/widgets/bottomAppBarButtons.dart';
+import 'package:dsc_oist/widgets/cardCarousel.dart';
+import 'package:dsc_oist/widgets/header.dart';
+import 'package:dsc_oist/widgets/joinUs.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/services.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      color: Colors.white,
+      debugShowCheckedModeBanner: false,
+      title: 'DSC OIST',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
+      routes: {
+        TeamScreen.routeName: (ctx) => TeamScreen(),
+        EventPage.routeName: (ctx) => EventPage(),
+        NewTeam.routeName: (ctx) => NewTeam(),
+      },
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -50,68 +47,179 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  // bool _error = false;
+  // bool _initialized = false;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  void initializeFirebase() async {
+    try {
+      await Firebase.initializeApp();
+      setState(() {
+        //  _initialized = true;
+      });
+    } catch (error) {
+      print(error);
+      setState(() {
+        // _error = true;
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initializeFirebase();
+  }
+
+  Future<UserCredential> signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication googleAuth =
+        await googleUser.authentication;
+
+    // Create a new credential
+    final GoogleAuthCredential credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+    // Navigator.pushNamed(context, SuccessScreen.routeName);
+
+    // Once signed in, return the UserCredential
+    return await FirebaseAuth.instance.signInWithCredential(credential);
+  }
+
+  ListTile _buildListTile(
+      IconData icon, String title, Color color, String route) {
+    return ListTile(
+      onTap: () {
+        Navigator.pushNamed(context, route);
+      },
+      leading: Icon(
+        icon,
+        color: color,
+      ),
+      title: Text(title),
+    );
+  }
+
+  void _showModalSheet() {
+    showModalBottomSheet(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(35.0),
+          topRight: Radius.circular(35.0),
+        ),
+      ),
+      context: context,
+      builder: (builder) {
+        return Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(35.0),
+              topRight: Radius.circular(35.0),
+            ),
+            border: Border.all(width: 0.1),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 15.0, top: 15.0, bottom: 15.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // _buildListTile(
+                //     Icons.sick_sharp, 'SigIn', Colors.black, signInWithGoogle),
+
+                _buildListTile(Icons.home, 'Home', Colors.red, '/'),
+                _buildListTile(
+                    Icons.event, 'Events', Colors.green, EventPage.routeName),
+                _buildListTile(
+                    Icons.people, 'Team', Colors.blue, NewTeam.routeName),
+                _buildListTile(Icons.info_outline, 'About ', Colors.yellow, ''),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.white54,
+        statusBarIconBrightness: Brightness.dark,
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+    );
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color.fromRGBO(25, 37, 46, 1),
+        bottomNavigationBar: BottomAppBar(
+          color: Color.fromRGBO(25, 37, 46, 1),
+          elevation: 50,
+          //  color: colors[index],
+          child: Container(
+            decoration: BoxDecoration(
+              // color: Color.fromRGBO(255, 240, 240, 1),
+              color: Colors.pink,
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(25),
+                topLeft: Radius.circular(25),
+              ),
+              border: Border.all(
+                // color: Colors.blue,
+                color: Colors.pink,
+                width: 2,
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            height: 50,
+            width: double.infinity,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                IconButton(
+                  color: Colors.white,
+                  onPressed: _showModalSheet,
+                  icon: Icon(
+                    Icons.menu,
+                    size: 28,
+                  ),
+                ),
+                BottomAppBarButtons(
+                  url:
+                      'https://www.youtube.com/channel/UC7hGd3W-i-edr8oLPZ_dYpw',
+                  icon: FontAwesomeIcons.youtube,
+                ),
+                BottomAppBarButtons(
+                    url: 'https://t.me/dsc_oist_bhopal',
+                    icon: FontAwesomeIcons.telegramPlane),
+                BottomAppBarButtons(
+                  url: 'https://www.instagram.com/dscoist/',
+                  icon: FontAwesomeIcons.instagram,
+                ),
+              ],
             ),
-          ],
+          ),
         ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Header(),
+              CarouselWithIndicatorDemo(),
+              SizedBox(
+                height: 300.0,
+              ),
+              JoinUs()
+            ],
+          ),
+        ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: signInWithGoogle,
+        //   tooltip: 'Increment',
+        //   child: Icon(Icons.add),
+        // ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
