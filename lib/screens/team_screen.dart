@@ -115,10 +115,14 @@ class TeamCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 30.0),
             child: CircleAvatar(
-              radius: 45.0,
-              backgroundImage: AssetImage(
-                'assets/$imgUrl.jpg',
-              ),
+              radius: 60.0,
+              backgroundColor: Colors.red,
+              // child: CircleAvatar(
+              //   radius: 45.0,
+              //   backgroundImage: AssetImage(
+              //     'assets/$imgUrl.jpg',
+              //   ),
+              // ),
             ),
           ),
           // SizedBox(width: 30.0),

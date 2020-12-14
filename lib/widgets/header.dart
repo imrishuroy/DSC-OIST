@@ -1,33 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 22),
+        SizedBox(height: 6.0),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               height: 60,
-              width: 100,
+              width: 80,
               child: Image.asset(
-                'assets/logo.png',
-                fit: BoxFit.cover,
+                'assets/dsc-logo.png',
+                //  fit: BoxFit.cover,
               ),
             ),
             SizedBox(
-              width: 10,
+              width: 8,
             ),
             Text(
               'DSC OIST',
-              style: TextStyle(
+              style: GoogleFonts.raleway(
                 fontWeight: FontWeight.w600,
                 color: Colors.white,
                 fontSize: 40,
               ),
-              textAlign: TextAlign.center,
+              // textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              width: 8,
             ),
           ],
         ),
@@ -35,11 +39,11 @@ class Header extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.only(right: 20.0),
               child: Text(
                 'Powered By Google Developers',
                 style: TextStyle(
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w500,
                   fontSize: 14,
                   color: Colors.white,
                 ),

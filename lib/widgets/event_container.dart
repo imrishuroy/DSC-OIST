@@ -36,8 +36,14 @@ Widget eventContainer({String imageUrl, String date, String eventLink}) {
         ),
       ),
       SizedBox(
-        height: 15.0,
+        height: 10.0,
       ),
+      Container(
+        width: 60.0,
+        child: Divider(
+          color: Colors.white,
+        ),
+      )
     ],
   );
 }
