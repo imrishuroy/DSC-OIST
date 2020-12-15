@@ -1,4 +1,5 @@
 import 'package:dsc_oist/screens/about_screen.dart';
+import 'package:dsc_oist/screens/event_experiment.dart';
 import 'package:dsc_oist/screens/event_page.dart';
 import 'package:dsc_oist/screens/team_screen.dart';
 
@@ -13,7 +14,6 @@ import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class MyHomeScreen extends StatefulWidget {
   static String routeName = 'home-screen';
@@ -143,15 +143,15 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
     );
     return SafeArea(
       child: Scaffold(
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {
-        //     //showAlertDialog(context: context);
-        //     Navigator.pushNamed(context, AboutScreen.routeName);
-        //   },
-        //   child: Icon(
-        //     Icons.plus_one,
-        //   ),
-        // ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            //showAlertDialog(context: context);
+            Navigator.pushNamed(context, EventExperiment.routeName);
+          },
+          child: Icon(
+            Icons.plus_one,
+          ),
+        ),
         backgroundColor: Color.fromRGBO(25, 37, 46, 1),
         bottomNavigationBar: BottomAppBar(
           color: Color.fromRGBO(25, 37, 46, 1),
