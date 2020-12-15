@@ -2,7 +2,6 @@ import 'package:dsc_oist/screens/about_screen.dart';
 import 'package:dsc_oist/screens/event_page.dart';
 import 'package:dsc_oist/screens/home_screen.dart';
 import 'package:dsc_oist/screens/splashscreen.dart';
-import 'package:dsc_oist/screens/team.dart';
 import 'package:dsc_oist/screens/team_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         TeamScreen.routeName: (ctx) => TeamScreen(),
         EventPage.routeName: (ctx) => EventPage(),
-        NewTeam.routeName: (ctx) => NewTeam(),
+        TeamScreen.routeName: (ctx) => TeamScreen(),
         AboutScreen.routeName: (ctx) => AboutScreen(),
         MyHomeScreen.routeName: (ctx) => MyHomeScreen(),
       },

@@ -1,22 +1,13 @@
+import 'package:dsc_oist/widgets/team_card.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class TeamScreen extends StatelessWidget {
-  static String routeName = 'people_dsc';
+  static String routeName = 'new-team';
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Color.fromRGBO(25, 37, 46, 0.1),
-        // backgroundColor: Color.fromRGBO(44, 184, 255, 1),
         backgroundColor: Color.fromRGBO(25, 37, 46, 1),
-        // appBar: AppBar(
-        //   elevation: 10.0,
-
-        //   title: Text(
-        //     'Get to Know About Us',
-        //   ),
-
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,6 +18,7 @@ class TeamScreen extends StatelessWidget {
                 child: Text(
                   'Our Team',
                   style: TextStyle(
+                    fontFamily: 'Raleway',
                     fontSize: 30.0,
                     color: Colors.white,
                     letterSpacing: 1.5,
@@ -47,34 +39,105 @@ class TeamScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20.0),
-              TeamCard(
-                name: 'Rishu Kumar',
-                deignation: 'Android Lead',
-                imgUrl: 'rishu',
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TeamCardItems(
+                    name: 'Suhani Sinha',
+                    designation: 'DSC Lead',
+                    imageUrl: 'assets/suhani.jpeg',
+                    instaUrl: 'https://www.instagram.com/suhanisinhahaha/',
+                    linkdinUrl: 'https://www.linkedin.com/in/suhani-sinha/',
+                  ),
+                  TeamCardItems(
+                    name: 'Vaishali Raut',
+                    designation: 'Women-in-Tech Lead',
+                    imageUrl: 'assets/vaishali.jpeg',
+                    linkdinUrl: 'https://www.linkedin.com/in/vaishali-raut/',
+                    instaUrl: 'https://www.instagram.com/_vaishaliraut_/',
+                  ),
+                  // TeamCardItems(),
+                ],
               ),
-              SizedBox(height: 20.0),
-              TeamCard(
-                name: 'Rishu Kumar',
-                deignation: 'Android Lead',
-                imgUrl: 'rishu',
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TeamCardItems(
+                    name: 'Bhupinder Singh',
+                    designation: 'Technical Lead',
+                    imageUrl: 'assets/bhupinder.jpeg',
+                    linkdinUrl:
+                        'https://www.linkedin.com/in/bhupinder-singh-359867165/',
+                    instaUrl: 'https://www.instagram.com/singh._harsh/',
+                  ),
+                  TeamCardItems(
+                    name: 'Sargun Singh Narula',
+                    designation: 'Management Lead',
+                    imageUrl: 'assets/sargun.jpeg',
+                    linkdinUrl:
+                        'https://www.linkedin.com/in/sargun-narula-8708511a6/',
+                    instaUrl: 'https://www.instagram.com/sar.gun007/',
+                  ),
+                ],
               ),
-              SizedBox(height: 20.0),
-              TeamCard(
-                name: 'Rishu Kumar',
-                deignation: 'Android Lead',
-                imgUrl: 'rishu',
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TeamCardItems(
+                    name: 'Vikrant Singh Tomer',
+                    designation: 'PR Lead',
+                    imageUrl: 'assets/vikrant.jpeg',
+                    linkdinUrl:
+                        'https://www.linkedin.com/in/vikrantsinghtomar14071999/',
+                    instaUrl: 'https://www.instagram.com/_.v.i.k.r.a.n.t._/',
+                  ),
+                  TeamCardItems(
+                    name: 'Abhas Asati',
+                    designation: 'Design Lead',
+                    imageUrl: 'assets/abhas.png',
+                    linkdinUrl: 'https://www.linkedin.com/in/abhasasati/',
+                    instaUrl: 'https://www.instagram.com/abhas_asati/',
+                  ),
+                ],
               ),
-              SizedBox(height: 20.0),
-              TeamCard(
-                name: 'Rishu Kumar',
-                deignation: 'Android Lead',
-                imgUrl: 'rishu',
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TeamCardItems(
+                    name: 'Rishu Kumar',
+                    designation: 'Android Lead',
+                    imageUrl: 'assets/rishu.jpg',
+                    linkdinUrl: 'https://www.linkedin.com/in/imrishuroy/',
+                    instaUrl: 'https://www.instagram.com/imrishuroy/',
+                  ),
+                  TeamCardItems(
+                    name: 'Sashank Gupta',
+                    designation: 'Web Dev Lead',
+                    imageUrl: 'assets/shashank.jpeg',
+                    linkdinUrl: 'https://www.linkedin.com/in/shashankgupta02/',
+                    instaUrl: 'https://www.instagram.com/shashank0201/',
+                  ),
+                ],
               ),
-              SizedBox(height: 20.0),
-              TeamCard(
-                name: 'Rishu Kumar',
-                deignation: 'Android Lead',
-                imgUrl: 'rishu',
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TeamCardItems(
+                    name: 'Pranav Chaturvedi',
+                    designation: 'Cloud & DevOps Lead',
+                    imageUrl: 'assets/pranav.jpeg',
+                    linkdinUrl:
+                        'https://www.linkedin.com/in/pranav-chaturvedi99/',
+                    instaUrl: 'https://www.instagram.com/framesxpc/',
+                  ),
+                  TeamCardItems(
+                    name: 'Rohit Jain',
+                    designation: 'DSA/CP Lead',
+                    imageUrl: 'assets/rohit.jpeg',
+                    linkdinUrl: 'https://www.linkedin.com/in/rohitjain0301/',
+                    instaUrl: 'https://www.instagram.com/_r.o.h.i.t_j.a.i.n/',
+                  ),
+                ],
               ),
             ],
           ),
@@ -83,108 +146,3 @@ class TeamScreen extends StatelessWidget {
     );
   }
 }
-
-class TeamCard extends StatelessWidget {
-  final String name;
-  final String deignation;
-  final String imgUrl;
-
-  TeamCard({
-    @required this.name,
-    @required this.deignation,
-    @required this.imgUrl,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20.0),
-      height: 125,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.white30,
-        //  color: Colors.blueAccent,
-        //color: Colors.purple,
-        //color: Color.fromRGBO(25, 37, 46, 0.1),
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          // SizedBox(width: 30.0),
-          Padding(
-            padding: const EdgeInsets.only(left: 30.0),
-            child: CircleAvatar(
-              radius: 60.0,
-              backgroundColor: Colors.red,
-              // child: CircleAvatar(
-              //   radius: 45.0,
-              //   backgroundImage: AssetImage(
-              //     'assets/$imgUrl.jpg',
-              //   ),
-              // ),
-            ),
-          ),
-          // SizedBox(width: 30.0),
-          Padding(
-            padding: const EdgeInsets.only(right: 40.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  name,
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
-                ),
-                Text(
-                  deignation,
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.w300,
-                    color: Colors.white,
-                  ),
-                ),
-                Row(
-                  children: [
-                    IconButton(
-                      icon: Icon(FontAwesomeIcons.linkedin),
-                      onPressed: () {},
-                      color: Colors.white,
-                    ),
-                    IconButton(
-                      icon: Icon(FontAwesomeIcons.facebook),
-                      onPressed: () {},
-                      color: Colors.white,
-                    ),
-                    IconButton(
-                      icon: Icon(FontAwesomeIcons.instagram),
-                      onPressed: () {},
-                      color: Colors.white,
-                    ),
-                  ],
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-// Material(
-//                       color: Colors.transparent,
-//                       child: InkWell(
-//                         child: Icon(
-//                           Icons.ac_unit_outlined,
-//                           color: Colors.yellow,
-//                           size: 30.0,
-//                         ),
-//                         splashColor: Colors.yellow,
-//                         highlightColor: Colors.red,
-//                         onTap: () {},
-//                       ),
-//                     )

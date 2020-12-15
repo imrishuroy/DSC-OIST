@@ -16,7 +16,8 @@ class JoinUs extends StatelessWidget {
         FlatButton(
           onPressed: () async {
             String url =
-                'https://accounts.google.com/o/oauth2/auth/identifier?redirect_uri=https%3A%2F%2Fdsc.community.dev%2Faccounts%2Fgoogle%2Flogin%2Fcallback%2F&access_type=offline&client_id=857409878587-im3f0si9p11h41a6aeiil7cs37frkubb.apps.googleusercontent.com&response_type=code&scope=profile%20email&state=yNgreI3NxYTg&flowName=GeneralOAuthFlow';
+                // 'https://accounts.google.com/o/oauth2/auth/identifier?redirect_uri=https%3A%2F%2Fdsc.community.dev%2Faccounts%2Fgoogle%2Flogin%2Fcallback%2F&access_type=offline&client_id=857409878587-im3f0si9p11h41a6aeiil7cs37frkubb.apps.googleusercontent.com&response_type=code&scope=profile%20email&state=yNgreI3NxYTg&flowName=GeneralOAuthFlow';
+                'https://dsc.community.dev/oriental-institute-of-science-and-technology/';
             if (await canLaunch(url)) {
               launch(url);
             } else {

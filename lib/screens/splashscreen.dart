@@ -14,16 +14,16 @@ class _MySplashScreenState extends State<MySplashScreen> {
       seconds: 3,
       navigateAfterSeconds: MyHomeScreen(),
       title: Text(
-        'DSC OIST',
+        'Welcome to DSC OIST',
         style: TextStyle(
-          fontSize: 30.0,
+          fontSize: 20.0,
           color: Colors.black,
           fontWeight: FontWeight.w500,
         ),
       ),
       image: Image.asset('assets/dsc.png'),
       //  backgroundColor: Color(0xff28df99),
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xffffffdd),
       photoSize: 110.0,
       loaderColor: Colors.orangeAccent,
     );

@@ -9,9 +9,13 @@ class PastEvents extends StatelessWidget {
         date: 'Sun, 06 Dec',
         eventLink: 'https://www.youtube.com/watch?v=kCBcVvVqOa4'),
     eventContainer(
-        imageUrl: 'android.jpeg',
-        date: 'Sun, 12 Nov',
+        imageUrl: 'flutter-day2.png',
+        date: 'Sun, 13 Nov',
         eventLink: 'https://www.youtube.com/watch?v=Y-VSXzBZeJ0'),
+    eventContainer(
+        imageUrl: 'flutter-day1.png',
+        date: 'Sun, 12 Nov',
+        eventLink: 'https://www.youtube.com/watch?v=J89bYOgvf4Y'),
     eventContainer(
         imageUrl: 'cp.jpeg',
         date: 'Sat, 24 Oct',

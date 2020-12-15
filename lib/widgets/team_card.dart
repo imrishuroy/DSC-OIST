@@ -1,12 +1,25 @@
+import 'dart:io';
+
+import 'package:dsc_oist/widgets/show_alert.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TeamCardItems extends StatelessWidget {
   final String name;
   final String designation;
   final String imageUrl;
+  final String instaUrl;
+  final String linkdinUrl;
 
-  const TeamCardItems({Key key, this.name, this.designation, this.imageUrl})
+  const TeamCardItems(
+      {Key key,
+      this.name,
+      this.designation,
+      this.imageUrl,
+      this.instaUrl,
+      this.linkdinUrl})
       : super(key: key);
 
   @override
@@ -25,8 +38,12 @@ class TeamCardItems extends StatelessWidget {
           children: [
             SizedBox(height: 20.0),
             Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: width * 0.1 - 10,
+              // padding: EdgeInsets.symmetric(
+              //   horizontal: width * 0.1 - 2.0,
+              // ),
+              padding: EdgeInsets.only(
+                left: width * 0.1 - 2.0,
+                right: width * 0.1 - 2.0,
               ),
               child: CircleAvatar(
                 radius: 48.0,
@@ -40,8 +57,9 @@ class TeamCardItems extends StatelessWidget {
             SizedBox(height: 10.0),
             Text(
               name,
-              style: GoogleFonts.averiaLibre(
-                fontSize: 22.0,
+              style: TextStyle(
+                fontFamily: 'AverialLibre',
+                fontSize: 17.0,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -51,14 +69,43 @@ class TeamCardItems extends StatelessWidget {
             ),
             Row(
               children: [
-                IconButton(icon: Icon(Icons.inbox), onPressed: () {}),
-                IconButton(icon: Icon(Icons.inbox), onPressed: () {}),
+                IconButton(
+                  icon: Icon(FontAwesomeIcons.linkedin),
+                  onPressed: () {
+                    launchUrl(linkdinUrl);
+                  },
+                ),
+                IconButton(
+                    icon: Icon(FontAwesomeIcons.instagram),
+                    onPressed: () {
+                      launchUrl(instaUrl);
+                    }),
               ],
             ),
             SizedBox(height: 8.0),
           ],
         ),
       ),
+    );
+  }
+}
+
+launchUrl(url) async {
+  try {
+    if (await canLaunch(url)) {
+      launch(url);
+    } else {
+      showAlertDialog(
+        title: 'Could not connect to server',
+        content: 'Check your internet connection and try again',
+        defaultActionText: 'OK',
+      );
+    }
+  } on SocketException catch (_) {
+    showAlertDialog(
+      title: 'Could not connect to server',
+      content: 'Check your internet connection and try again',
+      defaultActionText: 'OK',
     );
   }
 }

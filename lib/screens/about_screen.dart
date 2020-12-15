@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AboutScreen extends StatelessWidget {
   static String routeName = 'about-screen';
@@ -21,8 +20,9 @@ class AboutScreen extends StatelessWidget {
                 ),
                 child: Text(
                   'About Us',
-                  style: GoogleFonts.raleway(
+                  style: TextStyle(
                     fontSize: 35.0,
+                    fontFamily: 'Raleway',
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
@@ -49,7 +49,8 @@ class AboutScreen extends StatelessWidget {
                         ),
                         child: Text(
                           'There is something we can’t achieve alone that’s why learning together is important. A community that ever existed started with sharing. We work in a team and learn from each other. So let’s start learning something new and excited.',
-                          style: GoogleFonts.gupter(
+                          style: TextStyle(
+                            fontFamily: 'Gupter',
                             color: Colors.black,
                             fontSize: 18.5,
                           ),
@@ -85,10 +86,15 @@ class AboutScreen extends StatelessWidget {
                     Text(
                       'Made with ❤ by DSC OIST',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.openSans(
+                      style: TextStyle(
+                        fontFamily: 'OpenSans',
                         color: Colors.white,
                         fontSize: 16.0,
                       ),
+                    ),
+                    Text(
+                      'Version 1.0.1',
+                      style: TextStyle(color: Colors.white60),
                     ),
                   ],
                 ),
