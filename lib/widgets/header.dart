@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Header extends StatelessWidget {
   @override
@@ -18,21 +17,18 @@ class Header extends StatelessWidget {
                 //  fit: BoxFit.cover,
               ),
             ),
-            SizedBox(
-              width: 8,
-            ),
+            SizedBox(width: 8),
             Text(
               'DSC OIST',
-              style: GoogleFonts.raleway(
+              style: TextStyle(
+                fontFamily: 'Raleway',
                 fontWeight: FontWeight.w600,
                 color: Colors.white,
                 fontSize: 40,
               ),
               // textAlign: TextAlign.center,
             ),
-            SizedBox(
-              width: 8,
-            ),
+            SizedBox(width: 10),
           ],
         ),
         Row(

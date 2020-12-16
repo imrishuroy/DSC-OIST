@@ -1,7 +1,7 @@
-import 'package:dsc_oist/widgets/past_event.dart';
-import 'package:dsc_oist/widgets/upcomming_event.dart';
+import 'package:dsc_oist/screens/past_event_screen.dart';
+
+import 'package:dsc_oist/screens/upcomming_event_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class EventPage extends StatelessWidget {
   static String routeName = 'event-page';
@@ -20,7 +20,8 @@ class EventPage extends StatelessWidget {
                 SizedBox(width: 15.0),
                 Text(
                   'Events',
-                  style: GoogleFonts.raleway(
+                  style: TextStyle(
+                    fontFamily: 'Raleway',
                     fontSize: 30.0,
                     letterSpacing: 1.5,
                     fontWeight: FontWeight.w500,
@@ -35,7 +36,8 @@ class EventPage extends StatelessWidget {
                 Tab(
                   icon: Text(
                     'Upcomming',
-                    style: GoogleFonts.harmattan(
+                    style: TextStyle(
+                      fontFamily: 'Harmattan',
                       fontSize: 24.0,
                       color: Colors.pink,
                       fontWeight: FontWeight.w400,
@@ -45,7 +47,8 @@ class EventPage extends StatelessWidget {
                 Tab(
                   icon: Text(
                     'Past',
-                    style: GoogleFonts.harmattan(
+                    style: TextStyle(
+                      fontFamily: 'Harmattan',
                       fontSize: 24.0,
                       color: Colors.pink,
                       fontWeight: FontWeight.w400,
@@ -58,7 +61,8 @@ class EventPage extends StatelessWidget {
           body: TabBarView(
             children: [
               UpcommingEvent(),
-              PastEvents(),
+              //PastEvents(),
+              PastEventsScreen()
             ],
           ),
         ),

@@ -1,5 +1,5 @@
 import 'package:dsc_oist/screens/about_screen.dart';
-import 'package:dsc_oist/screens/event_experiment.dart';
+import 'package:dsc_oist/screens/past_event_screen.dart';
 import 'package:dsc_oist/screens/event_page.dart';
 import 'package:dsc_oist/screens/home_screen.dart';
 import 'package:dsc_oist/screens/splashscreen.dart';
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         TeamScreen.routeName: (ctx) => TeamScreen(),
         AboutScreen.routeName: (ctx) => AboutScreen(),
         MyHomeScreen.routeName: (ctx) => MyHomeScreen(),
-        EventExperiment.routeName: (ctx) => EventExperiment(),
+        PastEventsScreen.routeName: (ctx) => PastEventsScreen(),
       },
     );
   }
