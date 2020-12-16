@@ -1,4 +1,6 @@
 import 'package:dsc_oist/screens/about_screen.dart';
+import 'package:dsc_oist/screens/caraousel_experiment.dart';
+import 'package:dsc_oist/screens/learning_screen.dart';
 import 'package:dsc_oist/screens/past_event_screen.dart';
 import 'package:dsc_oist/screens/event_page.dart';
 import 'package:dsc_oist/screens/home_screen.dart';
@@ -30,6 +32,8 @@ class MyApp extends StatelessWidget {
         AboutScreen.routeName: (ctx) => AboutScreen(),
         MyHomeScreen.routeName: (ctx) => MyHomeScreen(),
         PastEventsScreen.routeName: (ctx) => PastEventsScreen(),
+        CaraoselExperiment.routeName: (ctx) => CaraoselExperiment(),
+        LearningScreen.routeName: (ctx) => LearningScreen(),
       },
     );
   }

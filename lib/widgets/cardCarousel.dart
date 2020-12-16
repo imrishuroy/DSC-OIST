@@ -3,11 +3,19 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 final List<String> imgList = [
-  'https://sixteenbrains.com/wp-content/uploads/2020/12/info.jpg',
-  'https://sixteenbrains.com/wp-content/uploads/2020/12/cp.jpeg',
-  'https://sixteenbrains.com/wp-content/uploads/2020/12/android-scaled.jpeg',
-  'https://sixteenbrains.com/wp-content/uploads/2020/12/study-jam.png',
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSGxlHT_Tust4sKHjMtWPa23l4J0aDObl1pcA&usqp=CAU',
+  'https://raw.githubusercontent.com/imrishuroy/Images/main/1.png',
+  'https://raw.githubusercontent.com/imrishuroy/Images/main/2.png',
+  'https://raw.githubusercontent.com/imrishuroy/Images/main/3.png',
+  'https://raw.githubusercontent.com/imrishuroy/Images/main/4.png',
+  'https://raw.githubusercontent.com/imrishuroy/Images/main/5.png',
+  'https://raw.githubusercontent.com/imrishuroy/Images/main/6.png',
+
+  // 'https://raw.githubusercontent.com/imrishuroy/DSC-Events-Images/main/1.png',
+  // 'https://sixteenbrains.com/wp-content/uploads/2020/12/info.jpg',
+  // 'https://sixteenbrains.com/wp-content/uploads/2020/12/cp.jpeg',
+  // 'https://sixteenbrains.com/wp-content/uploads/2020/12/android-scaled.jpeg',
+  // 'https://sixteenbrains.com/wp-content/uploads/2020/12/study-jam.png',
+  // 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSGxlHT_Tust4sKHjMtWPa23l4J0aDObl1pcA&usqp=CAU',
 ];
 
 final List<Widget> imageSliders = imgList

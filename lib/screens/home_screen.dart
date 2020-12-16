@@ -1,6 +1,8 @@
 import 'package:dsc_oist/screens/about_screen.dart';
+import 'package:dsc_oist/screens/caraousel_experiment.dart';
 
 import 'package:dsc_oist/screens/event_page.dart';
+import 'package:dsc_oist/screens/learning_screen.dart';
 import 'package:dsc_oist/screens/team_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -123,6 +125,9 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                     Icons.event, 'Events', Colors.green, EventPage.routeName),
                 _buildListTile(
                     Icons.people, 'Team', Colors.blue, TeamScreen.routeName),
+                _buildListTile(Icons.sticky_note_2, 'Learning', Colors.indigo,
+                    LearningScreen.routeName),
+
                 _buildListTile(Icons.info_outline, 'About ', Color(0xffffd31d),
                     AboutScreen.routeName),
               ],
@@ -143,15 +148,13 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
     );
     return SafeArea(
       child: Scaffold(
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {
-        //     //showAlertDialog(context: context);
-        //     Navigator.pushNamed(context, PastEventsScreen.routeName);
-        //   },
-        //   child: Icon(
-        //     Icons.plus_one,
-        //   ),
-        // ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            //showAlertDialog(context: context);
+            Navigator.pushNamed(context, CaraoselExperiment.routeName);
+          },
+          child: Icon(Icons.plus_one),
+        ),
         backgroundColor: Color.fromRGBO(25, 37, 46, 1),
         bottomNavigationBar: BottomAppBar(
           color: Color.fromRGBO(25, 37, 46, 1),
