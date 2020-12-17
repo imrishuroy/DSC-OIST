@@ -68,51 +68,7 @@ class AboutScreen extends StatelessWidget {
                 ),
               ),
             ),
-            /*  Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 23.0),
-              child: Card(
-                color: Colors.white70,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20.0, top: 10.0),
-                      child: Text(
-                        '"',
-                        style: TextStyle(fontSize: 30.0),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 20.0,
-                      ),
-                      child: Text(
-                        'There is something we can’t achieve alone that’s why learning together is important. A community that ever existed started with sharing. We work in a team and learn from each other. So let’s start learning something new and excited.',
-                        style: TextStyle(
-                          fontFamily: 'Gupter',
-                          color: Colors.black,
-                          fontSize: 18.5,
-                        ),
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            right: 20.0,
-                          ),
-                          child: Text(
-                            '"',
-                            style: TextStyle(fontSize: 30.0),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ), */
+
             SizedBox(height: 40.0),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 23.0),
