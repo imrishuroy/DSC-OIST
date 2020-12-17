@@ -1,3 +1,4 @@
+import 'package:dsc_oist/widgets/image_header.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -14,36 +15,39 @@ class AboutScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // SizedBox(height: 20.0),
-            Stack(
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: 240.0,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/community.jpg'),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 23.0,
-                    vertical: 44.0,
-                  ),
-                  child: Text(
-                    'About Us',
-                    style: TextStyle(
-                      fontSize: 35.0,
-                      fontFamily: 'Raleway',
-                      color: Colors.black87,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ],
+            // Stack(
+            //   children: [
+            //     Container(
+            //       width: double.infinity,
+            //       height: 240.0,
+            //       decoration: BoxDecoration(
+            //         image: DecorationImage(
+            //           fit: BoxFit.cover,
+            //           image: AssetImage('assets/community.jpg'),
+            //         ),
+            //       ),
+            //     ),
+            //     Padding(
+            //       padding: const EdgeInsets.symmetric(
+            //         horizontal: 23.0,
+            //         vertical: 44.0,
+            //       ),
+            //       child: Text(
+            //         'About Us',
+            //         style: TextStyle(
+            //           fontSize: 35.0,
+            //           fontFamily: 'Raleway',
+            //           color: Colors.black87,
+            //           fontWeight: FontWeight.w600,
+            //         ),
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            ImageHeader(
+              title: 'About Us',
+              imageUrl: 'assets/community.jpg',
             ),
-
             SizedBox(height: 30.0),
 
             Padding(

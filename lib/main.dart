@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         AboutScreen.routeName: (ctx) => AboutScreen(),
         MyHomeScreen.routeName: (ctx) => MyHomeScreen(),
         PastEventsScreen.routeName: (ctx) => PastEventsScreen(),
-        CaraoselExperiment.routeName: (ctx) => CaraoselExperiment(),
+        // CaraoselExperiment.routeName: (ctx) => CaraoselExperiment(),
         LearningScreen.routeName: (ctx) => LearningScreen(),
       },
     );

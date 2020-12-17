@@ -1,3 +1,4 @@
+import 'package:dsc_oist/widgets/image_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -19,7 +20,10 @@ class LearningScreen extends StatelessWidget {
         child: Column(
           //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ImageHeader(),
+            ImageHeader(
+              title: 'Learning Resourses',
+              imageUrl: 'assets/learning-cover.png',
+            ),
             SizedBox(height: 20.0),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -312,44 +316,44 @@ class LearningScreen extends StatelessWidget {
   }
 }
 
-class ImageHeader extends StatelessWidget {
-  // final String imageUrl;
-  // final String titleText;
+// class ImageHeader extends StatelessWidget {
+//   // final String imageUrl;
+//   // final String titleText;
 
-  // const ImageHeader({Key key, this.imageUrl, this.titleText}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          width: double.infinity,
-          height: 240,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage('assets/learning.jpg'),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 24.0,
-            vertical: 34.0,
-          ),
-          child: Text(
-            'Learning Resourses',
-            style: TextStyle(
-              fontSize: 30.0,
-              color: Colors.white,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Raleway',
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
+//   // const ImageHeader({Key key, this.imageUrl, this.titleText}) : super(key: key);
+//   @override
+//   Widget build(BuildContext context) {
+//     return Stack(
+//       children: [
+//         Container(
+//           width: double.infinity,
+//           height: 240,
+//           decoration: BoxDecoration(
+//             image: DecorationImage(
+//               fit: BoxFit.fill,
+//               image: AssetImage('assets/learning.jpg'),
+//             ),
+//           ),
+//         ),
+//         Padding(
+//           padding: const EdgeInsets.symmetric(
+//             horizontal: 24.0,
+//             vertical: 34.0,
+//           ),
+//           child: Text(
+//             'Learning Resourses',
+//             style: TextStyle(
+//               fontSize: 30.0,
+//               color: Colors.white,
+//               fontWeight: FontWeight.w800,
+//               fontFamily: 'Raleway',
+//             ),
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+// }
 
 class LinkText extends StatelessWidget {
   final String text;

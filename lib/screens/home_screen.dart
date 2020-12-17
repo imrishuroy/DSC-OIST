@@ -151,7 +151,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             //showAlertDialog(context: context);
-            Navigator.pushNamed(context, CaraoselExperiment.routeName);
+            // Navigator.pushNamed(context, CaraoselExperiment.routeName);
           },
           child: Icon(Icons.plus_one),
         ),

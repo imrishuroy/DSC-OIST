@@ -22,15 +22,15 @@ class ImageHeader extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 24.0,
-            vertical: 34.0,
+            vertical: 37.0,
           ),
           child: Text(
             title,
             style: TextStyle(
               fontSize: 30.0,
-              color: Colors.white,
-              fontWeight: FontWeight.w800,
               fontFamily: 'Raleway',
+              color: Colors.black87,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ),
