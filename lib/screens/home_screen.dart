@@ -1,17 +1,16 @@
 import 'package:dsc_oist/screens/about_screen.dart';
-import 'package:dsc_oist/screens/caraousel_experiment.dart';
 
 import 'package:dsc_oist/screens/event_page.dart';
+import 'package:dsc_oist/widgets/circle_indicator.dart';
 import 'package:dsc_oist/screens/learning_screen.dart';
+
 import 'package:dsc_oist/screens/team_screen.dart';
 import 'package:dsc_oist/widgets/domainBlock.dart';
-
 import 'package:flutter/material.dart';
 import 'package:dsc_oist/widgets/bottomAppBarButtons.dart';
 import 'package:dsc_oist/widgets/cardCarousel.dart';
 import 'package:dsc_oist/widgets/header.dart';
 import 'package:dsc_oist/widgets/joinUs.dart';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -35,9 +34,9 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   void initializeFirebase() async {
     try {
       await Firebase.initializeApp();
-      setState(() {
-        //  _initialized = true;
-      });
+      // setState(() {
+      //   //  _initialized = true;
+      // });
     } catch (error) {
       print(error);
       setState(() {
@@ -149,13 +148,13 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
     );
     return SafeArea(
       child: Scaffold(
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {
-        //     //showAlertDialog(context: context);
-        //     // Navigator.pushNamed(context, CaraoselExperiment.routeName);
-        //   },
-        //   child: Icon(Icons.plus_one),
-        // ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            //showAlertDialog(context: context);
+            Navigator.pushNamed(context, CircleIndicator.routeName);
+          },
+          child: Icon(Icons.plus_one),
+        ),
         backgroundColor: Color.fromRGBO(25, 37, 46, 1),
         bottomNavigationBar: BottomAppBar(
           color: Color.fromRGBO(25, 37, 46, 1),
@@ -211,9 +210,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
               CardCarouse(),
               SizedBox(height: 50.0),
               DomainBloc(),
-              SizedBox(
-                height: 50.0,
-              ),
+              SizedBox(height: 50.0),
               JoinUs()
             ],
           ),

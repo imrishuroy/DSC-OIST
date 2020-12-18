@@ -9,31 +9,26 @@ final List<String> imgList = [
   'https://raw.githubusercontent.com/imrishuroy/Images/main/4.png',
   'https://raw.githubusercontent.com/imrishuroy/Images/main/5.png',
   'https://raw.githubusercontent.com/imrishuroy/Images/main/6.png',
-
-  // 'https://raw.githubusercontent.com/imrishuroy/DSC-Events-Images/main/1.png',
-  // 'https://sixteenbrains.com/wp-content/uploads/2020/12/info.jpg',
-  // 'https://sixteenbrains.com/wp-content/uploads/2020/12/cp.jpeg',
-  // 'https://sixteenbrains.com/wp-content/uploads/2020/12/android-scaled.jpeg',
-  // 'https://sixteenbrains.com/wp-content/uploads/2020/12/study-jam.png',
-  // 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSGxlHT_Tust4sKHjMtWPa23l4J0aDObl1pcA&usqp=CAU',
 ];
 
 final List<Widget> imageSliders = imgList
-    .map((item) => Container(
+    .map(
+      (item) => Container(
+        // height: 400,
+        width: 500,
+        child: Container(
           // height: 400,
-          width: 500,
-          child: Container(
-            // height: 400,
-            width: 1000,
-            margin: EdgeInsets.all(5.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.all(
-                Radius.circular(20.0),
-              ),
-              child: Image.network(item, fit: BoxFit.cover, width: 2000.0),
+          width: 1000,
+          margin: EdgeInsets.all(5.0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(
+              Radius.circular(20.0),
             ),
+            child: Image.network(item, fit: BoxFit.cover, width: 2000.0),
           ),
-        ))
+        ),
+      ),
+    )
     .toList();
 
 class CardCarouse extends StatefulWidget {

@@ -42,39 +42,38 @@ class TeamScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TeamCardItems(
+                  TeamCard(
                     name: 'Suhani Sinha',
                     designation: 'DSC Lead',
                     imageUrl: 'assets/suhani.jpeg',
                     instaUrl: 'https://www.instagram.com/suhanisinhahaha/',
-                    linkdinUrl: 'https://www.linkedin.com/in/suhani-sinha/',
+                    linkdInUrl: 'https://www.linkedin.com/in/suhani-sinha/',
                   ),
-                  TeamCardItems(
+                  TeamCard(
                     name: 'Vaishali Raut',
                     designation: 'Women-in-Tech Lead',
                     imageUrl: 'assets/vaishali.jpeg',
-                    linkdinUrl: 'https://www.linkedin.com/in/vaishali-raut/',
+                    linkdInUrl: 'https://www.linkedin.com/in/vaishali-raut/',
                     instaUrl: 'https://www.instagram.com/_vaishaliraut_/',
                   ),
-                  // TeamCardItems(),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TeamCardItems(
+                  TeamCard(
                     name: 'Bhupinder Singh',
                     designation: 'Technical Lead',
                     imageUrl: 'assets/bhupinder.jpeg',
-                    linkdinUrl:
+                    linkdInUrl:
                         'https://www.linkedin.com/in/bhupinder-singh-359867165/',
                     instaUrl: 'https://www.instagram.com/singh._harsh/',
                   ),
-                  TeamCardItems(
+                  TeamCard(
                     name: 'Sargun Singh Narula',
                     designation: 'Management Lead',
                     imageUrl: 'assets/sargun.jpeg',
-                    linkdinUrl:
+                    linkdInUrl:
                         'https://www.linkedin.com/in/sargun-narula-8708511a6/',
                     instaUrl: 'https://www.instagram.com/sar.gun007/',
                   ),
@@ -83,19 +82,19 @@ class TeamScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TeamCardItems(
+                  TeamCard(
                     name: 'Vikrant Singh Tomer',
                     designation: 'PR Lead',
                     imageUrl: 'assets/vikrant.jpeg',
-                    linkdinUrl:
+                    linkdInUrl:
                         'https://www.linkedin.com/in/vikrantsinghtomar14071999/',
                     instaUrl: 'https://www.instagram.com/_.v.i.k.r.a.n.t._/',
                   ),
-                  TeamCardItems(
+                  TeamCard(
                     name: 'Abhas Asati',
                     designation: 'Design Lead',
                     imageUrl: 'assets/abhas.png',
-                    linkdinUrl: 'https://www.linkedin.com/in/abhasasati/',
+                    linkdInUrl: 'https://www.linkedin.com/in/abhasasati/',
                     instaUrl: 'https://www.instagram.com/abhas_asati/',
                   ),
                 ],
@@ -103,18 +102,18 @@ class TeamScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TeamCardItems(
+                  TeamCard(
                     name: 'Rishu Kumar',
                     designation: 'Android Lead',
                     imageUrl: 'assets/rishu.jpg',
-                    linkdinUrl: 'https://www.linkedin.com/in/imrishuroy/',
+                    linkdInUrl: 'https://www.linkedin.com/in/imrishuroy/',
                     instaUrl: 'https://www.instagram.com/imrishuroy/',
                   ),
-                  TeamCardItems(
+                  TeamCard(
                     name: 'Sashank Gupta',
                     designation: 'Web Dev Lead',
                     imageUrl: 'assets/shashank.jpeg',
-                    linkdinUrl: 'https://www.linkedin.com/in/shashankgupta02/',
+                    linkdInUrl: 'https://www.linkedin.com/in/shashankgupta02/',
                     instaUrl: 'https://www.instagram.com/shashank0201/',
                   ),
                 ],
@@ -122,19 +121,19 @@ class TeamScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TeamCardItems(
+                  TeamCard(
                     name: 'Pranav Chaturvedi',
                     designation: 'Cloud & DevOps Lead',
                     imageUrl: 'assets/pranav.jpeg',
-                    linkdinUrl:
+                    linkdInUrl:
                         'https://www.linkedin.com/in/pranav-chaturvedi99/',
                     instaUrl: 'https://www.instagram.com/framesxpc/',
                   ),
-                  TeamCardItems(
+                  TeamCard(
                     name: 'Rohit Jain',
                     designation: 'DSA/CP Lead',
                     imageUrl: 'assets/rohit.jpeg',
-                    linkdinUrl: 'https://www.linkedin.com/in/rohitjain0301/',
+                    linkdInUrl: 'https://www.linkedin.com/in/rohitjain0301/',
                     instaUrl: 'https://www.instagram.com/_r.o.h.i.t_j.a.i.n/',
                   ),
                 ],

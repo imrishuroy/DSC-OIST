@@ -14,36 +14,6 @@ class AboutScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // SizedBox(height: 20.0),
-            // Stack(
-            //   children: [
-            //     Container(
-            //       width: double.infinity,
-            //       height: 240.0,
-            //       decoration: BoxDecoration(
-            //         image: DecorationImage(
-            //           fit: BoxFit.cover,
-            //           image: AssetImage('assets/community.jpg'),
-            //         ),
-            //       ),
-            //     ),
-            //     Padding(
-            //       padding: const EdgeInsets.symmetric(
-            //         horizontal: 23.0,
-            //         vertical: 44.0,
-            //       ),
-            //       child: Text(
-            //         'About Us',
-            //         style: TextStyle(
-            //           fontSize: 35.0,
-            //           fontFamily: 'Raleway',
-            //           color: Colors.black87,
-            //           fontWeight: FontWeight.w600,
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
             ImageHeader(
               title: 'About Us',
               imageUrl: 'assets/community.jpg',
@@ -65,7 +35,7 @@ class AboutScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 23.0),
               child: Text(
-                'There is something we can’t achieve alone that’s why learning together is important. A community that ever existed started with sharing. We work in a team and learn from each other. So let’s start learning something new and excited.',
+                'A community that ever existed started with sharing. We work in a team and learn from each other.Our DSC has 4 domains till now. So let’s start learning something new and excited.',
                 style: TextStyle(
                   fontSize: 16.0,
                   color: Colors.white,
@@ -83,14 +53,28 @@ class AboutScreen extends StatelessWidget {
                     horizontal: 20.0,
                     vertical: 20.0,
                   ),
-                  child: Text(
-                    'Thank you for trying the app. Most of the features of the app depends on internet connectivity, so make sure you have proper internet connection to enjoy each and every features of the app',
-                    style: TextStyle(
-                      fontFamily: 'Gupter',
-                      fontSize: 18.0,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
-                    ),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Thank you for trying the app. Most of the features of the app depends on internet, so make sure you have proper internet connection to enjoy each and every features of the app.',
+                        style: TextStyle(
+                          fontFamily: 'Gupter',
+                          fontSize: 18.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 4.0),
+                      Text(
+                        'Give us feedback by tapping into feedback link bellow.',
+                        style: TextStyle(
+                          fontFamily: 'OpenSans',
+                          fontSize: 15.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

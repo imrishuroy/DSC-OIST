@@ -16,16 +16,18 @@ class _MySplashScreenState extends State<MySplashScreen> {
       title: Text(
         'Welcome to DSC OIST',
         style: TextStyle(
-          fontSize: 20.0,
-          color: Colors.black,
-          fontWeight: FontWeight.w500,
+          fontSize: 23.0,
+          color: Colors.white,
+          fontWeight: FontWeight.w600,
         ),
       ),
       image: Image.asset('assets/dsc.png'),
       //  backgroundColor: Color(0xff28df99),
-      backgroundColor: Color(0xffffffdd),
+      //backgroundColor: Color(0xffffffdd),
+      //  backgroundColor: Color(0xff214252),
+      backgroundColor: Color.fromRGBO(25, 37, 46, 1),
       photoSize: 110.0,
-      loaderColor: Colors.orangeAccent,
+      loaderColor: Colors.pink,
     );
   }
 }
