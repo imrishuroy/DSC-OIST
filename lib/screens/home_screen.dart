@@ -4,6 +4,7 @@ import 'package:dsc_oist/screens/caraousel_experiment.dart';
 import 'package:dsc_oist/screens/event_page.dart';
 import 'package:dsc_oist/screens/learning_screen.dart';
 import 'package:dsc_oist/screens/team_screen.dart';
+import 'package:dsc_oist/widgets/domainBlock.dart';
 
 import 'package:flutter/material.dart';
 import 'package:dsc_oist/widgets/bottomAppBarButtons.dart';
@@ -148,13 +149,13 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
     );
     return SafeArea(
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            //showAlertDialog(context: context);
-            // Navigator.pushNamed(context, CaraoselExperiment.routeName);
-          },
-          child: Icon(Icons.plus_one),
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {
+        //     //showAlertDialog(context: context);
+        //     // Navigator.pushNamed(context, CaraoselExperiment.routeName);
+        //   },
+        //   child: Icon(Icons.plus_one),
+        // ),
         backgroundColor: Color.fromRGBO(25, 37, 46, 1),
         bottomNavigationBar: BottomAppBar(
           color: Color.fromRGBO(25, 37, 46, 1),
@@ -208,8 +209,10 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
             children: <Widget>[
               Header(),
               CardCarouse(),
+              SizedBox(height: 50.0),
+              DomainBloc(),
               SizedBox(
-                height: 300.0,
+                height: 50.0,
               ),
               JoinUs()
             ],

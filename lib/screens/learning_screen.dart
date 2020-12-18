@@ -5,6 +5,15 @@ import 'package:url_launcher/url_launcher.dart';
 
 class LearningScreen extends StatelessWidget {
   static String routeName = 'LearningScreen';
+
+  urlLauncher(String url) async {
+    if (await canLaunch(url)) {
+      launch(url);
+    } else {
+      print('can\'t launch url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -62,8 +71,8 @@ class LearningScreen extends StatelessWidget {
                       children: [
                         LinkText(
                           width: width,
-                          text: 'Official Site',
-                          url: 'https://developer.android.com',
+                          text: 'Official Docs',
+                          url: 'https://developer.android.com/docs',
                         ),
                         LinkText(
                           width: width,
@@ -78,8 +87,13 @@ class LearningScreen extends StatelessWidget {
                         ),
                         LinkText(
                           width: width,
-                          text: 'Android Study Jam',
+                          text: 'Android Study Jam Article',
                           url: 'https://cutt.ly/ChKMbQo',
+                        ),
+                        LinkText(
+                          width: width,
+                          text: 'Kotlin Docs',
+                          url: 'https://kotlinlang.org/docs/reference/',
                         ),
                       ],
                     ),
@@ -108,24 +122,25 @@ class LearningScreen extends StatelessWidget {
                       children: [
                         LinkText(
                           width: width,
-                          text: 'Official Site',
-                          url: 'https://developer.android.com',
+                          text: 'Official Docs',
+                          url: 'https://developer.apple.com/documentation/',
                         ),
                         LinkText(
                           width: width,
-                          text: 'Android Codelabs',
+                          text: 'iOS on GitHub',
                           url:
-                              'https://codelabs.developers.google.com/?cat=android',
+                              'https://github.com/search?q=iOS+development+tutorial',
                         ),
                         LinkText(
                           width: width,
-                          text: 'Android Training Courses',
-                          url: ' https://developer.android.com/courses',
+                          text: 'iOS Dev with Swift by Stanford ',
+                          url:
+                              'https://itunes.apple.com/us/course/developing-iOS-10-apps-with-Swift/id1198467120',
                         ),
                         LinkText(
                           width: width,
-                          text: 'Android Study Jam',
-                          url: 'https://cutt.ly/ChKMbQo',
+                          text: 'Awesome iOS',
+                          url: 'https://ios.libhunt.com',
                         ),
                       ],
                     ),
@@ -154,24 +169,29 @@ class LearningScreen extends StatelessWidget {
                       children: [
                         LinkText(
                           width: width,
-                          text: 'Official Site',
-                          url: 'https://developer.android.com',
+                          text: 'Flutter Docs',
+                          url: 'https://flutter.dev/docs',
                         ),
                         LinkText(
                           width: width,
-                          text: 'Android Codelabs',
+                          text: 'Flutter Codelabs',
                           url:
-                              'https://codelabs.developers.google.com/?cat=android',
+                              'https://codelabs.developers.google.com/?cat=flutter',
                         ),
                         LinkText(
                           width: width,
-                          text: 'Android Training Courses',
-                          url: ' https://developer.android.com/courses',
+                          text: 'Flutter Books Collection',
+                          url: 'https://github.com/imrishuroy/Flutter-Books',
                         ),
                         LinkText(
                           width: width,
-                          text: 'Android Study Jam ',
-                          url: 'https://cutt.ly/ChKMbQo',
+                          text: 'Flutter Gems',
+                          url: 'https://fluttergems.dev',
+                        ),
+                        LinkText(
+                          width: width,
+                          text: 'Dart Language Tour',
+                          url: 'https://dart.dev/guides5',
                         ),
                       ],
                     ),
@@ -188,13 +208,13 @@ class LearningScreen extends StatelessWidget {
                   children: [
                     LinkText(
                       width: width,
-                      text: 'Oficial Site',
-                      url: 'https://cutt.ly/ChKMbQo',
+                      text: 'Flaviocopes',
+                      url: 'https://flaviocopes.com',
                     ),
                     LinkText(
                       width: width,
-                      text: 'Flaviocopes',
-                      url: 'https://cutt.ly/ChKMbQo',
+                      text: 'Javascript30',
+                      url: 'https://javascript30.com',
                     ),
                     LinkText(
                       width: width,
@@ -205,6 +225,11 @@ class LearningScreen extends StatelessWidget {
                       width: width,
                       text: 'CSS Tricks',
                       url: 'https://cutt.ly/ChKMbQo',
+                    ),
+                    LinkText(
+                      width: width,
+                      text: 'MDN web Docs ',
+                      url: 'https://developer.mozilla.org/en-US/docs/Learn',
                     ),
                   ],
                 ),
@@ -222,7 +247,7 @@ class LearningScreen extends StatelessWidget {
                       children: [
                         SizedBox(width: 60.0),
                         Text(
-                          'CP RoadMap',
+                          'CP - RoadMap ',
                           style: TextStyle(
                             fontSize: 18.0,
                             color: Colors.blue,
@@ -234,19 +259,20 @@ class LearningScreen extends StatelessWidget {
                               color: Colors.red,
                             ),
                             onPressed: () {
-                              print('tapped');
-                            })
+                              urlLauncher(
+                                  'https://drive.google.com/file/d/1YjQGdMQP2vOc4bjwgwaOO3T3TsDThjtQ/view?usp=sharing');
+                            }),
                       ],
                     ),
                     LinkText(
                       width: width,
-                      text: 'Flaviocopes',
-                      url: 'https://cutt.ly/ChKMbQo',
+                      text: 'CP - Algorithms',
+                      url: 'https://cp-algorithms.com',
                     ),
                     LinkText(
                       width: width,
-                      text: 'Traversy Media Youtube',
-                      url: 'https://cutt.ly/ChKMbQo',
+                      text: 'GeeksforGeeks',
+                      url: 'https://www.geeksforgeeks.org',
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -265,21 +291,22 @@ class LearningScreen extends StatelessWidget {
                               color: Colors.red,
                             ),
                             onPressed: () {
-                              print('tapped');
+                              urlLauncher(
+                                  'https://drive.google.com/file/d/11vS0QIiQZHBOYH5UZ69mZzzScEgv0rF5/view?usp=sharing');
                             })
                       ],
                     ),
                     LinkText(
                       width: width,
-                      text: 'CSS Tricks',
-                      url: 'https://cutt.ly/ChKMbQo',
+                      text: 'CodeChef',
+                      url: 'https://www.codechef.com',
                     ),
                   ],
                 ),
                 SizedBox(height: 15.0),
                 DevelopmentHeading(
                   width: width,
-                  title: 'DevOps',
+                  title: 'DevOps and Cloud',
                   logo: 'assets/images/devops.png',
                 ),
                 SizedBox(height: 10.0),
@@ -287,26 +314,68 @@ class LearningScreen extends StatelessWidget {
                   children: [
                     LinkText(
                       width: width,
-                      text: 'Oficial Site',
-                      url: 'https://cutt.ly/ChKMbQo',
+                      text: 'Kubernets Docs',
+                      url: 'https://kubernetes.io/docs/home/',
                     ),
                     LinkText(
                       width: width,
-                      text: 'Flaviocopes',
-                      url: 'https://cutt.ly/ChKMbQo',
+                      text: 'Docker Docs',
+                      url: 'https://docs.docker.com',
                     ),
                     LinkText(
                       width: width,
-                      text: 'Traversy Media Youtube',
-                      url: 'https://cutt.ly/ChKMbQo',
+                      text: 'Git Docs',
+                      url: 'https://git-scm.com/doc',
                     ),
                     LinkText(
                       width: width,
-                      text: 'CSS Tricks',
-                      url: 'https://cutt.ly/ChKMbQo',
+                      text: 'Google Cloud',
+                      url: 'https://cloud.google.com/docs',
+                    ),
+                    LinkText(
+                      width: width,
+                      text: 'QuickLabs',
+                      url: ' https://www.qwiklabs.com',
                     ),
                   ],
                 ),
+                SizedBox(height: 20.0),
+                DevelopmentHeading(
+                  width: width,
+                  title: 'Code Editors & IDEs',
+                  logo: 'assets/code-editor.png',
+                ),
+                SizedBox(height: 10.0),
+                Column(
+                  children: [
+                    LinkText(
+                      width: width,
+                      text: 'VS Code',
+                      url: 'https://code.visualstudio.com',
+                    ),
+                    LinkText(
+                      width: width,
+                      text: 'Atom',
+                      url: 'https://atom.io',
+                    ),
+                    LinkText(
+                      width: width,
+                      text: 'Brackets',
+                      url: 'http://brackets.io',
+                    ),
+                    LinkText(
+                      width: width,
+                      text: 'Sublime',
+                      url: 'https://www.sublimetext.com',
+                    ),
+                    LinkText(
+                      width: width,
+                      text: 'Android Studio',
+                      url: 'https://developer.android.com/studio',
+                    ),
+                  ],
+                ),
+                SizedBox(height: 25.0),
               ],
             ),
           ],
@@ -315,45 +384,6 @@ class LearningScreen extends StatelessWidget {
     );
   }
 }
-
-// class ImageHeader extends StatelessWidget {
-//   // final String imageUrl;
-//   // final String titleText;
-
-//   // const ImageHeader({Key key, this.imageUrl, this.titleText}) : super(key: key);
-//   @override
-//   Widget build(BuildContext context) {
-//     return Stack(
-//       children: [
-//         Container(
-//           width: double.infinity,
-//           height: 240,
-//           decoration: BoxDecoration(
-//             image: DecorationImage(
-//               fit: BoxFit.fill,
-//               image: AssetImage('assets/learning.jpg'),
-//             ),
-//           ),
-//         ),
-//         Padding(
-//           padding: const EdgeInsets.symmetric(
-//             horizontal: 24.0,
-//             vertical: 34.0,
-//           ),
-//           child: Text(
-//             'Learning Resourses',
-//             style: TextStyle(
-//               fontSize: 30.0,
-//               color: Colors.white,
-//               fontWeight: FontWeight.w800,
-//               fontFamily: 'Raleway',
-//             ),
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }
 
 class LinkText extends StatelessWidget {
   final String text;
@@ -397,9 +427,14 @@ class DevelopmentHeading extends StatelessWidget {
   final String title;
   final String logo;
   final double width;
+  // final Color color;
 
-  const DevelopmentHeading({Key key, this.title, this.logo, this.width})
-      : super(key: key);
+  const DevelopmentHeading({
+    Key key,
+    this.title,
+    this.logo,
+    this.width,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
