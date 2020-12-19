@@ -80,7 +80,7 @@ class TeamScreen extends StatelessWidget {
                   ),
                   TeamCard(
                     about:
-                        'Sargun is someone who prefers books as his first resource. He is a python developer and a Linux lover and also develops web applications using flask.',
+                        'Sargun is someone who prefers books as his first resource. He is a python developer and a Linux lover also develops web applications using flask.',
                     avatar: 'assets/images/sargun-avtar.png',
                     name: 'Sargun Singh Narula',
                     designation: 'Management Lead',
@@ -107,7 +107,7 @@ class TeamScreen extends StatelessWidget {
                   ),
                   TeamCard(
                     about:
-                        ' Abhas is the most creative guy on the team. He is well versed with graphics designing and his skills speak for themselves as he has worked with GDG Bhopal.',
+                        'Abhas is the most creative guy in the team. He is well versed with graphics designing and his skills speaks for itself as he has worked with GDG Bhopal.',
                     avatar: 'assets/images/graphic-designer.png',
                     name: 'Abhas Asati',
                     designation: 'Design Lead',
@@ -147,7 +147,7 @@ class TeamScreen extends StatelessWidget {
                 children: [
                   TeamCard(
                     about:
-                        'Pranav has been working on DevOps, Linux, and Python for quite a few months now. He is also into mobile app development using Flutter and interested in the Google Cloud Platform.',
+                        'Pranav has been working on DevOps, Linux, and Python for quite a few months now. He is also into mobile app development using Flutter and is very much interested in Google Cloud Platform.',
                     avatar: 'assets/images/hacker.png',
                     name: 'Pranav Chaturvedi',
                     designation: 'Cloud & DevOps Lead',
@@ -158,7 +158,7 @@ class TeamScreen extends StatelessWidget {
                   ),
                   TeamCard(
                     about:
-                        ' Rohit loves competitive programming and is good at what he does.He is among the very few people in 2nd year who cracked the pre-qualifier round of TCS Codevita 9.',
+                        ' Rohit loves competitive programming and is actually good at what he does.He is also among the very few people in 2nd year who cracked the pre-qualifier round of TCS Codevita 9.',
                     avatar: 'assets/images/programmer.png',
                     name: 'Rohit Jain',
                     designation: 'DSA/CP Lead',
