@@ -312,6 +312,28 @@ class LearningScreen extends StatelessWidget {
                 SizedBox(height: 10.0),
                 Column(
                   children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(width: 60.0),
+                        Text(
+                          'RHEL 7 Docs',
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            color: Colors.blue,
+                          ),
+                        ),
+                        IconButton(
+                            icon: Icon(
+                              Icons.picture_as_pdf_rounded,
+                              color: Colors.red,
+                            ),
+                            onPressed: () {
+                              urlLauncher(
+                                  'https://drive.google.com/file/d/1kZ5Jxxj7fZwcn6nUGeX8kNgT2B38BMv-/view?usp=sharing');
+                            })
+                      ],
+                    ),
                     LinkText(
                       width: width,
                       text: 'Kubernets Docs',
@@ -324,7 +346,7 @@ class LearningScreen extends StatelessWidget {
                     ),
                     LinkText(
                       width: width,
-                      text: 'Git Docs',
+                      text: 'Git & GitHub Docs',
                       url: 'https://git-scm.com/doc',
                     ),
                     LinkText(

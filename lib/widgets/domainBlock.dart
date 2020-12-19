@@ -16,15 +16,15 @@ class DomainBloc extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             DomainRow(
-              domainTitle: 'Android',
+              domainTitle: 'App Dev',
               color: Colors.red,
             ),
             DomainRow(
-              domainTitle: 'Web',
+              domainTitle: 'Web Dev',
               color: Colors.yellow,
             ),
             DomainRow(
-              domainTitle: 'CP',
+              domainTitle: 'DSA / CP',
               color: Colors.deepPurple,
             ),
             DomainRow(

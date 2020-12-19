@@ -1,7 +1,7 @@
 import 'package:dsc_oist/screens/about_screen.dart';
 
 import 'package:dsc_oist/screens/event_page.dart';
-import 'package:dsc_oist/widgets/circle_indicator.dart';
+
 import 'package:dsc_oist/screens/learning_screen.dart';
 
 import 'package:dsc_oist/screens/team_screen.dart';
@@ -148,13 +148,13 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
     );
     return SafeArea(
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            //showAlertDialog(context: context);
-            Navigator.pushNamed(context, CircleIndicator.routeName);
-          },
-          child: Icon(Icons.plus_one),
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {
+        //     //showAlertDialog(context: context);
+        //     Navigator.pushNamed(context, CircleIndicator.routeName);
+        //   },
+        //   child: Icon(Icons.plus_one),
+        // ),
         backgroundColor: Color.fromRGBO(25, 37, 46, 1),
         bottomNavigationBar: BottomAppBar(
           color: Color.fromRGBO(25, 37, 46, 1),

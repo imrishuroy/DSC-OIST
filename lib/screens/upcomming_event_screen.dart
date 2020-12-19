@@ -1,4 +1,3 @@
-import 'package:dsc_oist/widgets/circle_indicator.dart';
 import 'package:dsc_oist/widgets/one_event_container.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -13,7 +12,8 @@ class UpcommingEvent extends StatelessWidget {
       builder: (ctx, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
-            child: CircleIndicator(),
+            //child: CircleIndicator(),
+            child: CircularProgressIndicator(),
           );
         }
         return ListView.builder(

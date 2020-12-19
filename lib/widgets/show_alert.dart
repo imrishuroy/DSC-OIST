@@ -21,3 +21,26 @@ Future<void> showAlertDialog({
     ),
   );
 }
+
+Future<void> aboutDialog({
+  BuildContext context,
+  @required String about,
+  @required String avatar,
+}) async {
+  return await showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      // title: Icon(Icons.access_alarm),
+      title: Container(
+        height: 70.0,
+        width: 20.0,
+        child: Image.asset(avatar),
+      ),
+      content: Text(
+        about,
+        textAlign: TextAlign.center,
+        style: TextStyle(fontFamily: 'AverialLibre'),
+      ),
+    ),
+  );
+}

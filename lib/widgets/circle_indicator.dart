@@ -19,7 +19,7 @@ class _CircleIndicatorState extends State<CircleIndicator>
   void initState() {
     super.initState();
     animationController =
-        AnimationController(duration: new Duration(seconds: 1), vsync: this);
+        AnimationController(duration: new Duration(seconds: 2), vsync: this);
     animationController.repeat();
   }
 

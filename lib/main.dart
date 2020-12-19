@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'DSC OIST',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        accentColor: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MySplashScreen(),

@@ -10,26 +10,30 @@ class TeamCard extends StatelessWidget {
   final String designation;
   final String instaUrl;
   final String linkdInUrl;
+  final String about;
+  final String avatar;
 
-  const TeamCard(
-      {Key key,
-      this.name,
-      this.imageUrl,
-      this.designation,
-      this.instaUrl,
-      this.linkdInUrl})
-      : super(key: key);
+  const TeamCard({
+    Key key,
+    this.name,
+    this.imageUrl,
+    this.designation,
+    this.instaUrl,
+    this.linkdInUrl,
+    this.about,
+    this.avatar,
+  }) : super(key: key);
 
-  launchUrl(url) async {
+  launchUrl(String url, BuildContext context) async {
     try {
       if (await canLaunch(url)) {
         launch(url);
       } else {
         showAlertDialog(
-          title: 'Could not connect to server',
-          content: 'Check your internet connection and try again',
-          defaultActionText: 'OK',
-        );
+            title: 'Could not connect to server',
+            content: 'Check your internet connection and try again',
+            defaultActionText: 'OK',
+            context: context);
       }
     } on SocketException catch (_) {
       showAlertDialog(
@@ -44,6 +48,10 @@ class TeamCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Card(
+        elevation: 10.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5.0),
+        ),
         color: Colors.white70,
         child: Column(
           children: [
@@ -51,9 +59,14 @@ class TeamCard extends StatelessWidget {
             CircleAvatar(
               radius: 49.0,
               backgroundColor: Colors.white,
-              child: CircleAvatar(
-                radius: 45.0,
-                backgroundImage: AssetImage(imageUrl),
+              child: GestureDetector(
+                onTap: () {
+                  aboutDialog(context: context, about: about, avatar: avatar);
+                },
+                child: CircleAvatar(
+                  radius: 45.0,
+                  backgroundImage: AssetImage(imageUrl),
+                ),
               ),
             ),
             SizedBox(height: 8.0),
@@ -77,13 +90,13 @@ class TeamCard extends StatelessWidget {
                 IconButton(
                   icon: Icon(FontAwesomeIcons.linkedin),
                   onPressed: () {
-                    launchUrl(linkdInUrl);
+                    launchUrl(linkdInUrl, context);
                   },
                 ),
                 IconButton(
                   icon: Icon(FontAwesomeIcons.instagram),
                   onPressed: () {
-                    launchUrl(instaUrl);
+                    launchUrl(instaUrl, context);
                   },
                 )
               ],
