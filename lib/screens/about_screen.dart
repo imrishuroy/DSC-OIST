@@ -4,7 +4,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 class AboutScreen extends StatelessWidget {
   static String routeName = 'about-screen';
-  final feedBackUrl = 'https://forms.gle/KEBGbXWsR1D9VLkh7';
+  final url =
+      'https://dsc.community.dev/oriental-institute-of-science-and-technology/';
   @override
   Widget build(BuildContext context) {
     //final height = MediaQuery.of(context).size.height;
@@ -19,34 +20,12 @@ class AboutScreen extends StatelessWidget {
               imageUrl: 'assets/community.jpg',
             ),
             SizedBox(height: 30.0),
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 23.0),
-              child: Text(
-                'Let\'s learn together',
-                style: TextStyle(
-                  fontSize: 22.0,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            SizedBox(height: 20.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 23.0),
-              child: Text(
-                'A community that ever existed started with sharing. We work in a team and learn from each other.Our DSC has 4 domains till now. So let’s start learning something new and excited.',
-                style: TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-
-            SizedBox(height: 40.0),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 23.0),
               child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
                 color: Colors.white,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -56,22 +35,30 @@ class AboutScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        'Thank you for trying the app. Most of the features of the app depends on internet, so make sure you have proper internet connection to enjoy each and every features of the app.',
-                        style: TextStyle(
-                          fontFamily: 'Gupter',
-                          fontSize: 18.0,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(height: 4.0),
-                      Text(
-                        'Give us feedback by tapping into feedback link bellow.',
+                        'Developer Student Clubs (DSC) powered by Google Developers are university-based community groups for students interested in Google developer technologies.\n',
                         style: TextStyle(
                           fontFamily: 'OpenSans',
                           fontSize: 15.0,
                           color: Colors.black,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Text(
+                        'We are a group of individuals who are passionate about community work and believe technology can solve many day to day problems.\n',
+                        style: TextStyle(
+                          fontFamily: 'OpenSans',
+                          fontSize: 15.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Text(
+                        'By joining a DSC students can grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their community. No matter what your knowledge level is you are most welcome to be a part of this community and learn and grow together!',
+                        style: TextStyle(
+                          fontFamily: 'OpenSans',
+                          fontSize: 15.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ],
@@ -79,22 +66,18 @@ class AboutScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // Container(
-            //   child: Image.asset('assets/people.png'),
-            // ),
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 28.0, vertical: 17.0),
+              padding: const EdgeInsets.only(left: 35.0, top: 25.0),
               child: InkWell(
                 onTap: () async {
-                  if (await canLaunch(feedBackUrl)) {
-                    launch(feedBackUrl);
+                  if (await canLaunch(url)) {
+                    launch(url);
                   } else {
                     print('can\'t launch url');
                   }
                 },
                 child: Text(
-                  'FeedBack',
+                  'Join Us at dsc.developer.dev',
                   style: TextStyle(
                     color: Colors.blue,
                     fontWeight: FontWeight.w600,
@@ -103,7 +86,7 @@ class AboutScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 80.0),
+            SizedBox(height: 35.0),
             Container(
               width: double.infinity,
               child: Column(
@@ -121,7 +104,10 @@ class AboutScreen extends StatelessWidget {
                   ),
                   Text(
                     'Version 1.0.0',
-                    style: TextStyle(color: Colors.white60),
+                    style: TextStyle(
+                      color: Colors.white60,
+                      fontFamily: 'Raleway',
+                    ),
                   ),
                 ],
               ),

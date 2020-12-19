@@ -83,12 +83,18 @@ class LearningScreen extends StatelessWidget {
                         LinkText(
                           width: width,
                           text: 'Android Training Courses',
-                          url: ' https://developer.android.com/courses',
+                          url: 'https://developer.android.com/courses',
+                        ),
+                        LinkText(
+                          width: width,
+                          text: 'Android Jetpack',
+                          url: 'https://developer.android.com/jetpack',
                         ),
                         LinkText(
                           width: width,
                           text: 'Android Study Jam Article',
-                          url: 'https://cutt.ly/ChKMbQo',
+                          url:
+                              'https://www.linkedin.com/pulse/android-study-jam-session-1-rishu-kumar/?trackingId=GEkzdGHVT16%2BHwAyVWNcFw%3D%3Dhttps://www.linkedin.com/pulse/android-study-jam-session-1-rishu-kumar/?trackingId=GEkzdGHVT16%2BHwAyVWNcFw%3D%3D',
                         ),
                         LinkText(
                           width: width,
@@ -133,7 +139,7 @@ class LearningScreen extends StatelessWidget {
                         ),
                         LinkText(
                           width: width,
-                          text: 'iOS Dev with Swift by Stanford ',
+                          text: 'iOS Dev by Stanford ',
                           url:
                               'https://itunes.apple.com/us/course/developing-iOS-10-apps-with-Swift/id1198467120',
                         ),
@@ -141,6 +147,16 @@ class LearningScreen extends StatelessWidget {
                           width: width,
                           text: 'Awesome iOS',
                           url: 'https://ios.libhunt.com',
+                        ),
+                        LinkText(
+                          width: width,
+                          text: 'iOS Goodies',
+                          url: 'https://ios-goodies.com',
+                        ),
+                        LinkText(
+                          width: width,
+                          text: 'Swift Development Resources',
+                          url: 'https://developer.apple.com/swift/resources/',
                         ),
                       ],
                     ),
@@ -190,8 +206,13 @@ class LearningScreen extends StatelessWidget {
                         ),
                         LinkText(
                           width: width,
+                          text: 'Flutter Fire',
+                          url: 'https://firebase.flutter.dev',
+                        ),
+                        LinkText(
+                          width: width,
                           text: 'Dart Language Tour',
-                          url: 'https://dart.dev/guides5',
+                          url: 'https://dart.dev/guides/language/language-tour',
                         ),
                       ],
                     ),
@@ -219,12 +240,17 @@ class LearningScreen extends StatelessWidget {
                     LinkText(
                       width: width,
                       text: 'Traversy Media Youtube',
-                      url: 'https://cutt.ly/ChKMbQo',
+                      url: 'https://www.youtube.com/TraversyMedia',
                     ),
                     LinkText(
                       width: width,
                       text: 'CSS Tricks',
-                      url: 'https://cutt.ly/ChKMbQo',
+                      url: 'https://css-tricks.com',
+                    ),
+                    LinkText(
+                      width: width,
+                      text: 'freeCodeCamp',
+                      url: 'https://www.freecodecamp.org/learn/',
                     ),
                     LinkText(
                       width: width,
@@ -247,26 +273,27 @@ class LearningScreen extends StatelessWidget {
                       children: [
                         SizedBox(width: 60.0),
                         Text(
-                          'CP - RoadMap ',
+                          'CP RoadMap',
                           style: TextStyle(
                             fontSize: 18.0,
                             color: Colors.blue,
                           ),
                         ),
                         IconButton(
-                            icon: Icon(
-                              Icons.picture_as_pdf_rounded,
-                              color: Colors.red,
-                            ),
-                            onPressed: () {
-                              urlLauncher(
-                                  'https://drive.google.com/file/d/1YjQGdMQP2vOc4bjwgwaOO3T3TsDThjtQ/view?usp=sharing');
-                            }),
+                          icon: Icon(
+                            Icons.picture_as_pdf_rounded,
+                            color: Colors.red,
+                          ),
+                          onPressed: () {
+                            urlLauncher(
+                                'https://drive.google.com/file/d/1YjQGdMQP2vOc4bjwgwaOO3T3TsDThjtQ/view?usp=sharing');
+                          },
+                        ),
                       ],
                     ),
                     LinkText(
                       width: width,
-                      text: 'CP - Algorithms',
+                      text: 'Algorithms',
                       url: 'https://cp-algorithms.com',
                     ),
                     LinkText(
@@ -286,20 +313,26 @@ class LearningScreen extends StatelessWidget {
                           ),
                         ),
                         IconButton(
-                            icon: Icon(
-                              Icons.picture_as_pdf_rounded,
-                              color: Colors.red,
-                            ),
-                            onPressed: () {
-                              urlLauncher(
-                                  'https://drive.google.com/file/d/11vS0QIiQZHBOYH5UZ69mZzzScEgv0rF5/view?usp=sharing');
-                            })
+                          icon: Icon(
+                            Icons.picture_as_pdf_rounded,
+                            color: Colors.red,
+                          ),
+                          onPressed: () {
+                            urlLauncher(
+                                'https://drive.google.com/file/d/11vS0QIiQZHBOYH5UZ69mZzzScEgv0rF5/view?usp=sharing');
+                          },
+                        ),
                       ],
                     ),
                     LinkText(
                       width: width,
                       text: 'CodeChef',
                       url: 'https://www.codechef.com',
+                    ),
+                    LinkText(
+                      width: width,
+                      text: 'HackerEarth',
+                      url: 'https://www.hackerrank.com',
                     ),
                   ],
                 ),
@@ -324,14 +357,15 @@ class LearningScreen extends StatelessWidget {
                           ),
                         ),
                         IconButton(
-                            icon: Icon(
-                              Icons.picture_as_pdf_rounded,
-                              color: Colors.red,
-                            ),
-                            onPressed: () {
-                              urlLauncher(
-                                  'https://drive.google.com/file/d/1kZ5Jxxj7fZwcn6nUGeX8kNgT2B38BMv-/view?usp=sharing');
-                            })
+                          icon: Icon(
+                            Icons.picture_as_pdf_rounded,
+                            color: Colors.red,
+                          ),
+                          onPressed: () {
+                            urlLauncher(
+                                'https://drive.google.com/file/d/1kZ5Jxxj7fZwcn6nUGeX8kNgT2B38BMv-/view?usp=sharing');
+                          },
+                        )
                       ],
                     ),
                     LinkText(
@@ -357,7 +391,7 @@ class LearningScreen extends StatelessWidget {
                     LinkText(
                       width: width,
                       text: 'QuickLabs',
-                      url: ' https://www.qwiklabs.com',
+                      url: 'https://www.qwiklabs.com',
                     ),
                   ],
                 ),
@@ -377,6 +411,11 @@ class LearningScreen extends StatelessWidget {
                     ),
                     LinkText(
                       width: width,
+                      text: 'Sublime Text',
+                      url: 'https://www.sublimetext.com',
+                    ),
+                    LinkText(
+                      width: width,
                       text: 'Atom',
                       url: 'https://atom.io',
                     ),
@@ -387,13 +426,13 @@ class LearningScreen extends StatelessWidget {
                     ),
                     LinkText(
                       width: width,
-                      text: 'Sublime',
-                      url: 'https://www.sublimetext.com',
+                      text: 'Android Studio',
+                      url: 'https://developer.android.com/studio',
                     ),
                     LinkText(
                       width: width,
-                      text: 'Android Studio',
-                      url: 'https://developer.android.com/studio',
+                      text: 'PyCharm',
+                      url: 'https://www.jetbrains.com/pycharm/',
                     ),
                   ],
                 ),

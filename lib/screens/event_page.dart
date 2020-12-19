@@ -59,11 +59,7 @@ class EventPage extends StatelessWidget {
             ),
           ),
           body: TabBarView(
-            children: [
-              UpcommingEvent(),
-              //PastEvents(),
-              PastEventsScreen()
-            ],
+            children: [UpcommingEvent(), PastEventsScreen()],
           ),
         ),
       ),

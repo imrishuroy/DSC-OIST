@@ -20,23 +20,13 @@ class UpcommingEvent extends StatelessWidget {
           itemCount: snapshot.data.docs.length,
           itemBuilder: (ctx, index) {
             final imageUrl = snapshot.data.docs[index]['imageUrl'];
-            return !snapshot.hasData
-                ? Container(
-                    child: Center(
-                      child: Text(
-                        'No Upcomming Event',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  )
-                : OneEventContainer(
-                    imageUrl: imageUrl,
-                    date: '',
-                    youtubeLink: '',
-                  );
+            final date = snapshot.data.docs[index]['date'];
+            final youtubeLink = snapshot.data.docs[index]['youtubeLink'];
+            return OneEventContainer(
+              imageUrl: imageUrl,
+              date: date,
+              youtubeLink: youtubeLink,
+            );
           },
         );
       },

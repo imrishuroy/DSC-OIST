@@ -30,7 +30,7 @@ class TeamScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Text(
-                  '"Any individual can\'t create a awesome community. Every Community that ever existed started with sharing ! " ',
+                  '"Any individual can\'t create a community. Every community that ever existed started with sharing ! " ',
                   style: TextStyle(
                     fontSize: 17.0,
                     color: Colors.white,

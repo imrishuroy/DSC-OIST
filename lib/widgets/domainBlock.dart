@@ -62,6 +62,7 @@ class DomainRow extends StatelessWidget {
               domainTitle,
               style: TextStyle(
                 color: Colors.white,
+                fontFamily: 'AverialLibre',
                 fontSize: 20.0,
                 fontWeight: FontWeight.w600,
               ),
