@@ -16,6 +16,7 @@ import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 class MyHomeScreen extends StatefulWidget {
   static String routeName = 'home-screen';
@@ -49,6 +50,14 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   void initState() {
     super.initState();
     initializeFirebase();
+    final fbm = FirebaseMessaging();
+    // fbm.requestNotificationPermissions();
+    fbm.configure(onLaunch: (message) {
+      return Navigator.pushNamed(context, EventPage.routeName);
+    }, onResume: (message) {
+      //print(message);
+      return Navigator.pushNamed(context, EventPage.routeName);
+    });
   }
 
   Future<UserCredential> signInWithGoogle() async {
@@ -148,13 +157,6 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
     );
     return SafeArea(
       child: Scaffold(
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {
-        //     //showAlertDialog(context: context);
-        //     Navigator.pushNamed(context, CircleIndicator.routeName);
-        //   },
-        //   child: Icon(Icons.plus_one),
-        // ),
         backgroundColor: Color.fromRGBO(25, 37, 46, 1),
         bottomNavigationBar: BottomAppBar(
           color: Color.fromRGBO(25, 37, 46, 1),
@@ -211,15 +213,10 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
               SizedBox(height: 50.0),
               DomainBloc(),
               SizedBox(height: 50.0),
-              JoinUs()
+              JoinUs(),
             ],
           ),
         ),
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: signInWithGoogle,
-        //   tooltip: 'Increment',
-        //   child: Icon(Icons.add),
-        // ),
       ),
     );
   }

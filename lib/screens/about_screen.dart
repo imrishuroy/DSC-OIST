@@ -80,13 +80,13 @@ class AboutScreen extends StatelessWidget {
                   'Join Us at dsc.developer.dev',
                   style: TextStyle(
                     color: Colors.blue,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w900,
                     fontSize: 17.0,
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 35.0),
+            SizedBox(height: 33.0),
             Container(
               width: double.infinity,
               child: Column(

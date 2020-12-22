@@ -8,6 +8,7 @@ class UpcommingEvent extends StatelessWidget {
     return StreamBuilder(
       stream: FirebaseFirestore.instance
           .collection('upcomingEvents/fDlUSkm2jZ8syVd0yhN4/events')
+          .orderBy('numbering')
           .snapshots(),
       builder: (ctx, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
