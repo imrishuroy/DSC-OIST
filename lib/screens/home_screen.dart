@@ -3,6 +3,7 @@ import 'package:dsc_oist/screens/about_screen.dart';
 import 'package:dsc_oist/screens/event_page.dart';
 
 import 'package:dsc_oist/screens/learning_screen.dart';
+import 'package:dsc_oist/screens/new_learning_screen.dart';
 
 import 'package:dsc_oist/screens/team_screen.dart';
 import 'package:dsc_oist/widgets/domainBlock.dart';
@@ -135,7 +136,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                 _buildListTile(
                     Icons.people, 'Team', Colors.blue, TeamScreen.routeName),
                 _buildListTile(Icons.sticky_note_2, 'Learning', Colors.indigo,
-                    LearningScreen.routeName),
+                    NewLearningScreen.routeName),
 
                 _buildListTile(Icons.info_outline, 'About ', Color(0xffffd31d),
                     AboutScreen.routeName),

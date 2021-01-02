@@ -1,4 +1,5 @@
 import 'package:dsc_oist/screens/about_screen.dart';
+import 'package:dsc_oist/screens/new_learning_screen.dart';
 import 'package:dsc_oist/widgets/circle_indicator.dart';
 import 'package:dsc_oist/screens/learning_screen.dart';
 import 'package:dsc_oist/screens/past_event_screen.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         PastEventsScreen.routeName: (ctx) => PastEventsScreen(),
         LearningScreen.routeName: (ctx) => LearningScreen(),
         CircleIndicator.routeName: (ctx) => CircleIndicator(),
+        NewLearningScreen.routeName: (ctx) => NewLearningScreen(),
       },
     );
   }
