@@ -3,7 +3,6 @@ import 'package:dsc_oist/screens/about_screen.dart';
 import 'package:dsc_oist/screens/event_page.dart';
 
 import 'package:dsc_oist/screens/learning_screen.dart';
-import 'package:dsc_oist/screens/new_learning_screen.dart';
 import 'package:dsc_oist/screens/notification_screen.dart';
 
 import 'package:dsc_oist/screens/team_screen.dart';
@@ -15,8 +14,7 @@ import 'package:dsc_oist/widgets/header.dart';
 import 'package:dsc_oist/widgets/joinUs.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
@@ -34,7 +32,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   // bool _error = false;
   // bool _initialized = false;
 
-  void initializeFirebase() async {
+  void _initializeFirebase() async {
     try {
       await Firebase.initializeApp();
       // setState(() {
@@ -51,34 +49,35 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   @override
   void initState() {
     super.initState();
-    initializeFirebase();
+    _initializeFirebase();
     final fbm = FirebaseMessaging();
     // fbm.requestNotificationPermissions();
-    fbm.configure(onLaunch: (message) {
-      return Navigator.pushNamed(context, EventPage.routeName);
-    }, onResume: (message) {
-      //print(message);
-      return Navigator.pushNamed(context, EventPage.routeName);
+    fbm.configure(
+        //     //called when the app is in foregraound and we receive a push notification
+        //     onMessage: (message) {
+        //   _navigateScreen(message);
+        // },
+        //Called when the app has been closed completely and it's opened by notification
+        onLaunch: (message) async {
+      _navigateScreen(message);
+    },
+        //Called when the app is in background
+        onResume: (message) async {
+      _navigateScreen(message);
     });
   }
 
-  Future<UserCredential> signInWithGoogle() async {
-    // Trigger the authentication flow
-    final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
-
-    // Obtain the auth details from the request
-    final GoogleSignInAuthentication googleAuth =
-        await googleUser.authentication;
-
-    // Create a new credential
-    final GoogleAuthCredential credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
-    );
-    // Navigator.pushNamed(context, SuccessScreen.routeName);
-
-    // Once signed in, return the UserCredential
-    return await FirebaseAuth.instance.signInWithCredential(credential);
+  _navigateScreen(Map<String, dynamic> message) {
+    var notificationData = message['data'];
+    var view = notificationData['view'];
+    if (view != null) {
+      if (view == 'event-page') {
+        return Navigator.pushNamed(context, EventPage.routeName);
+      }
+      if (view == 'notification-page') {
+        return Navigator.pushNamed(context, NotificationScreen.routeName);
+      }
+    }
   }
 
   ListTile _buildListTile(
@@ -139,7 +138,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                 _buildListTile(Icons.notifications_rounded, 'Notifications',
                     Colors.deepOrange, NotificationScreen.routeName),
                 _buildListTile(Icons.sticky_note_2, 'Learning', Colors.indigo,
-                    NewLearningScreen.routeName),
+                    LearningScreen.routeName),
 
                 _buildListTile(Icons.info_outline, 'About ', Color(0xffffd31d),
                     AboutScreen.routeName),

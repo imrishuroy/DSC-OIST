@@ -26,11 +26,11 @@ class OneEventContainer extends StatelessWidget {
             }
           },
           child: Container(
-            margin: EdgeInsets.all(20.0),
+            margin: EdgeInsets.all(15.0),
             height: 200.0,
             width: double.infinity,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(17),
               border: Border.all(),
               image: DecorationImage(
                 fit: BoxFit.cover,
