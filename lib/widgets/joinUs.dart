@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class JoinUs extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class JoinUs extends StatelessWidget {
           // padding: EdgeInsets.symmetric(horizontal: 10, vertical: 7.0),
           color: Colors.blue,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(35.0),
+            borderRadius: BorderRadius.circular(18.0),
           ),
           onPressed: () async {
             String url =
@@ -35,14 +36,25 @@ class JoinUs extends StatelessWidget {
             padding: const EdgeInsets.symmetric(
               vertical: 8.0,
             ),
-            child: Text(
-              'Join Us',
-              style: TextStyle(
-                fontSize: 18,
-                //fontFamily: 'Raleway',
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
-              ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Join Us',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontFamily: 'OpenSans-Regualar',
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(width: 10.0),
+                Icon(
+                  FontAwesomeIcons.solidHandshake,
+                  color: Colors.white,
+                ),
+                SizedBox(width: 5.0),
+              ],
             ),
           ),
         )

@@ -14,17 +14,31 @@ class TeamScreen extends StatelessWidget {
             children: [
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
-                child: Text(
-                  'Our Team',
-                  style: TextStyle(
-                    fontFamily: 'Raleway',
-                    fontSize: 30.0,
-                    color: Colors.white,
-                    letterSpacing: 1.5,
-                    fontWeight: FontWeight.w500,
+                    const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10),
+                child: TweenAnimationBuilder(
+                  curve: Curves.easeIn,
+                  child: Text(
+                    'Our Team',
+                    style: TextStyle(
+                      fontFamily: 'Raleway',
+                      fontSize: 30.0,
+                      color: Colors.white,
+                      letterSpacing: 1.5,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    textAlign: TextAlign.start,
                   ),
-                  textAlign: TextAlign.start,
+                  tween: Tween(begin: 0.0, end: 1.0),
+                  duration: Duration(seconds: 1),
+                  builder: (context, value, child) {
+                    return Opacity(
+                      opacity: value,
+                      child: Padding(
+                        padding: EdgeInsets.only(top: value * 10),
+                        child: child,
+                      ),
+                    );
+                  },
                 ),
               ),
               Padding(

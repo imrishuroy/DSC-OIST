@@ -214,7 +214,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
               Header(),
               CardCarouse(),
               SizedBox(height: 50.0),
-              DomainBloc(),
+              DomainBlock(),
               SizedBox(height: 50.0),
               JoinUs(),
             ],

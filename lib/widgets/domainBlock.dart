@@ -1,39 +1,53 @@
 import 'package:flutter/material.dart';
 
-class DomainBloc extends StatelessWidget {
+class DomainBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          margin: EdgeInsets.only(left: 25.0),
-          height: 220,
-          width: 10,
-          color: Colors.blue,
-        ),
-        Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            DomainRow(
-              domainTitle: 'App Dev',
-              color: Colors.red,
-            ),
-            DomainRow(
-              domainTitle: 'Web Dev',
-              color: Colors.yellow,
-            ),
-            DomainRow(
-              domainTitle: 'DSA / CP',
-              color: Colors.deepPurple,
-            ),
-            DomainRow(
-              domainTitle: 'DevOps',
-              color: Colors.green,
-            ),
-          ],
-        ),
-      ],
+    return TweenAnimationBuilder(
+      curve: Curves.bounceInOut,
+      child: Row(
+        children: [
+          Container(
+            margin: EdgeInsets.only(left: 25.0),
+            height: 220,
+            width: 10,
+            color: Colors.blue,
+          ),
+          Column(
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              DomainRow(
+                domainTitle: 'App Dev',
+                color: Colors.red,
+              ),
+              DomainRow(
+                domainTitle: 'Web Dev',
+                color: Colors.yellow,
+              ),
+              DomainRow(
+                domainTitle: 'DSA / CP',
+                color: Colors.deepPurple,
+              ),
+              DomainRow(
+                domainTitle: 'DevOps',
+                color: Colors.green,
+              ),
+            ],
+          ),
+        ],
+      ),
+      tween: Tween(begin: 0.0, end: 1.0),
+      duration: Duration(seconds: 2),
+      builder: (context, value, child) {
+        return Opacity(
+          opacity: value,
+          child: Padding(
+            padding: EdgeInsets.all(value * 20),
+            child: child,
+          ),
+        );
+      },
     );
   }
 }
