@@ -63,11 +63,11 @@ class OneNotificationCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: -11.0,
+            left: -10.0,
             top: -4.0,
             child: Transform(
               child: Card(
-                color: Colors.red,
+                color: Colors.pink,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 10,

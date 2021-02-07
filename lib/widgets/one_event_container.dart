@@ -31,7 +31,7 @@ class OneEventContainer extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(17),
-              border: Border.all(),
+              border: Border.all(color: Colors.white70, width: 0.7),
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(

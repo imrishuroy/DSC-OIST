@@ -93,17 +93,45 @@ class AboutScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    'Made with ❤ by DSC OIST',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'OpenSans',
-                      color: Colors.white,
-                      fontSize: 16.0,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Made with ',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontFamily: 'Harmattan')),
+                      TweenAnimationBuilder(
+                        child: Icon(
+                          // 'Made with ❤ by DSC OIST',
+                          Icons.favorite,
+                          color: Colors.red,
+                          size: 10,
+                        ),
+                        tween: Tween(begin: 0.0, end: 1.0),
+                        duration: Duration(seconds: 1),
+                        builder: (context, value, child) {
+                          return Opacity(
+                            opacity: value,
+                            child: Icon(
+                              Icons.favorite,
+                              size: value * 35,
+                              color: Colors.red,
+                            ),
+                          );
+                        },
+                      ),
+                      Text(
+                        ' by DSC OIST',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.0,
+                            fontFamily: 'Harmattan'),
+                      ),
+                    ],
                   ),
                   Text(
-                    'Version 1.0.1',
+                    'Version 1.0.2',
                     style: TextStyle(
                       color: Colors.white60,
                       fontFamily: 'Raleway',

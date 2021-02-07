@@ -31,11 +31,24 @@ Future<void> aboutDialog({
     context: context,
     builder: (context) => AlertDialog(
       // title: Icon(Icons.access_alarm),
-      title: Container(
-        height: 70.0,
-        width: 20.0,
-        child: Image.asset(avatar),
-      ),
+      title: TweenAnimationBuilder(
+          child: Container(
+            height: 40.0,
+            width: 20.0,
+            child: Image.asset(avatar),
+          ),
+          tween: Tween(begin: 0.0, end: 1.0),
+          duration: Duration(milliseconds: 600),
+          builder: (context, value, child) {
+            return Opacity(
+              opacity: value,
+              child: Container(
+                height: value * 70,
+                width: value * 30,
+                child: Image.asset(avatar),
+              ),
+            );
+          }),
       content: Text(
         about,
         textAlign: TextAlign.center,

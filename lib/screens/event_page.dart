@@ -14,21 +14,51 @@ class EventPage extends StatelessWidget {
           backgroundColor: Color.fromRGBO(25, 37, 46, 1),
           appBar: AppBar(
             backgroundColor: Colors.white30,
-            title: Row(
-              children: [
-                Icon(Icons.calendar_today),
-                SizedBox(width: 15.0),
-                Text(
-                  'Events',
-                  style: TextStyle(
-                    fontFamily: 'Raleway',
-                    fontSize: 30.0,
-                    letterSpacing: 1.5,
-                    fontWeight: FontWeight.w500,
-                  ),
+            title: TweenAnimationBuilder(
+                curve: Curves.easeIn,
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.calendar_today,
+                      size: 20.0,
+                    ),
+                    SizedBox(width: 15.0),
+                    Text(
+                      'Events',
+                      style: TextStyle(
+                        fontFamily: 'Raleway',
+                        fontSize: 18.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+                tween: Tween(begin: 0.0, end: 1.0),
+                duration: Duration(seconds: 1),
+                builder: (context, value, child) {
+                  return Opacity(
+                    opacity: value,
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.calendar_today,
+                          size: value * 24,
+                        ),
+                        SizedBox(width: 15.0),
+                        Text(
+                          'Events',
+                          style: TextStyle(
+                            fontFamily: 'Raleway',
+                            fontSize: value * 30.0,
+                            letterSpacing: value * 1.5,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }),
             bottom: TabBar(
               indicatorColor: Colors.green,
               indicatorWeight: 4.0,
@@ -59,7 +89,10 @@ class EventPage extends StatelessWidget {
             ),
           ),
           body: TabBarView(
-            children: [UpcommingEvent(), PastEventsScreen()],
+            children: [
+              UpcommingEvent(),
+              PastEventsScreen(),
+            ],
           ),
         ),
       ),

@@ -18,81 +18,6 @@ import 'package:flutter/material.dart';
 //   },
 // ];
 
-// class NotificationScreen extends StatelessWidget {
-//   static String routeName = '/notification-screen';
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Color.fromRGBO(25, 37, 46, 1),
-//       appBar: AppBar(
-//         title: Text(
-//           'Notifications',
-//           style: TextStyle(
-//             fontSize: 26.0,
-//             fontFamily: 'Raleway',
-//             color: Colors.white,
-//             fontWeight: FontWeight.w500,
-//             letterSpacing: 1.1,
-//           ),
-//         ),
-//         centerTitle: true,
-//         backgroundColor: Colors.white30,
-//         actions: [
-//           CircleAvatar(
-//             radius: 13.5,
-//             backgroundColor: Colors.white70,
-//             child: Text(
-//               '2',
-//               style: TextStyle(
-//                 color: Colors.black,
-//                 fontWeight: FontWeight.w700,
-//               ),
-//             ),
-//           ),
-//           SizedBox(width: 20.0),
-//         ],
-//         bottom: PreferredSize(
-//           child: Container(),
-//           preferredSize: Size.fromHeight(10.0),
-//         ),
-//       ),
-//       body: StreamBuilder(
-//         stream:
-//             FirebaseFirestore.instance.collection('notifications').snapshots(),
-//         builder: (context, snapshot) {
-//           if (snapshot.connectionState == ConnectionState.waiting) {
-//             return Center(
-//               child: CircularProgressIndicator(),
-//             );
-//           }
-//           return ListView.builder(
-//             itemCount: snapshot.data.docs.length,
-//             itemBuilder: (context, index) {
-//               final imageUrl = snapshot.data.docs[index]['imageUrl'];
-//               final title = snapshot.data.docs[index]['title'];
-//               final subTitle = snapshot.data.docs[index]['subTitle'];
-//               final link = snapshot.data.docs[index]['link'];
-
-//               return Column(
-//                 children: [
-//                   // SizedBox(height: 5.0),
-//                   OneNotificationCard(
-//                     imageUrl: imageUrl,
-//                     link: link,
-//                     title: title,
-//                     subTitle: subTitle,
-//                   ),
-//                 ],
-//               );
-//             },
-//           );
-//         },
-//       ),
-//     );
-//   }
-// }
-
 class NotificationScreen extends StatelessWidget {
   static String routeName = '/notification-screen';
 
@@ -114,15 +39,32 @@ class NotificationScreen extends StatelessWidget {
         return Scaffold(
           backgroundColor: Color.fromRGBO(25, 37, 46, 1),
           appBar: AppBar(
-            title: Text(
-              'Notifications',
-              style: TextStyle(
-                fontSize: 26.0,
-                fontFamily: 'Raleway',
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-                letterSpacing: 1.1,
+            title: TweenAnimationBuilder(
+              curve: Curves.easeIn,
+              child: Text(
+                'Notifications',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontFamily: 'Raleway',
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: 0.0,
+                ),
               ),
+              tween: Tween(begin: 0.0, end: 1.0),
+              duration: Duration(milliseconds: 600),
+              builder: (context, value, child) {
+                return Text(
+                  'Notifications',
+                  style: TextStyle(
+                    fontSize: value * 25.0,
+                    fontFamily: 'Raleway',
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: value * 1.5,
+                  ),
+                );
+              },
             ),
             centerTitle: true,
             backgroundColor: Colors.white30,
@@ -134,7 +76,7 @@ class NotificationScreen extends StatelessWidget {
                   '${_notificationLength == null ? '' : _notificationLength}',
                   style: TextStyle(
                     color: Colors.black,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

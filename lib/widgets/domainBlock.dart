@@ -4,14 +4,25 @@ class DomainBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
-      curve: Curves.bounceInOut,
+      curve: Curves.easeIn,
       child: Row(
         children: [
-          Container(
-            margin: EdgeInsets.only(left: 25.0),
-            height: 220,
-            width: 10,
-            color: Colors.blue,
+          TweenAnimationBuilder(
+            curve: Curves.easeIn,
+            child: Container(
+              margin: EdgeInsets.only(left: 25.0),
+              height: 220,
+              width: 10,
+              color: Colors.blue,
+            ),
+            tween: Tween(begin: 0.0, end: 1.0),
+            duration: Duration(seconds: 2),
+            builder: (context, value, child) {
+              return Opacity(
+                opacity: value,
+                child: child,
+              );
+            },
           ),
           Column(
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,26 +74,48 @@ class DomainRow extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 20.0),
-        Row(
-          children: [
-            Container(
-              margin: EdgeInsets.only(left: 25.0),
-              height: 5,
-              width: 100,
-              color: color,
+        TweenAnimationBuilder(
+            child: Row(
+              children: [
+                TweenAnimationBuilder(
+                    child: Container(
+                      margin: EdgeInsets.only(left: 25.0),
+                      height: 5,
+                      // width: 100,
+                      width: 20,
+                      color: color,
+                    ),
+                    tween: Tween(begin: 0.0, end: 1.0),
+                    duration: Duration(seconds: 2),
+                    builder: (context, value, child) {
+                      return Opacity(
+                        opacity: value,
+                        child: Container(
+                          child: child,
+                          width: value * 140,
+                        ),
+                      );
+                    }),
+                SizedBox(width: 20.0),
+                Text(
+                  domainTitle,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'AverialLibre',
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                )
+              ],
             ),
-            SizedBox(width: 20.0),
-            Text(
-              domainTitle,
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'AverialLibre',
-                fontSize: 20.0,
-                fontWeight: FontWeight.w600,
-              ),
-            )
-          ],
-        ),
+            tween: Tween(begin: 0.0, end: 1.0),
+            duration: Duration(seconds: 2),
+            builder: (context, value, child) {
+              return Opacity(
+                opacity: value,
+                child: child,
+              );
+            }),
         SizedBox(height: 20.0),
       ],
     );
