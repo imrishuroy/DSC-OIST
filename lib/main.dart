@@ -9,7 +9,7 @@ import 'package:dsc_oist/screens/event_page.dart';
 import 'package:dsc_oist/screens/home_screen.dart';
 import 'package:dsc_oist/screens/splashscreen.dart';
 import 'package:dsc_oist/screens/team_screen.dart';
-import 'package:dsc_oist/widgets/shimmer_loading.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +43,6 @@ class MyApp extends StatelessWidget {
         CircleIndicator.routeName: (ctx) => CircleIndicator(),
         LearningScreen.routeName: (ctx) => LearningScreen(),
         NotificationScreen.routeName: (ctx) => NotificationScreen(),
-        ShimmerLoading.routeName: (ctx) => ShimmerLoading()
       },
     );
   }

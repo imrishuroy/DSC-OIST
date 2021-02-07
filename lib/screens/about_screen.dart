@@ -102,20 +102,21 @@ class AboutScreen extends StatelessWidget {
                               fontSize: 20,
                               fontFamily: 'Harmattan')),
                       TweenAnimationBuilder(
+                        curve: Curves.easeInCubic,
                         child: Icon(
                           // 'Made with ❤ by DSC OIST',
                           Icons.favorite,
                           color: Colors.red,
-                          size: 10,
+                          size: 7,
                         ),
                         tween: Tween(begin: 0.0, end: 1.0),
-                        duration: Duration(seconds: 1),
+                        duration: Duration(milliseconds: 800),
                         builder: (context, value, child) {
                           return Opacity(
                             opacity: value,
                             child: Icon(
                               Icons.favorite,
-                              size: value * 35,
+                              size: value * 27,
                               color: Colors.red,
                             ),
                           );

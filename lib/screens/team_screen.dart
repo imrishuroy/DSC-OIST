@@ -16,7 +16,7 @@ class TeamScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10),
                 child: TweenAnimationBuilder(
-                  curve: Curves.easeIn,
+                  curve: Curves.easeInCubic,
                   child: Text(
                     'Our Team',
                     style: TextStyle(
@@ -29,12 +29,12 @@ class TeamScreen extends StatelessWidget {
                     textAlign: TextAlign.start,
                   ),
                   tween: Tween(begin: 0.0, end: 1.0),
-                  duration: Duration(seconds: 1),
+                  duration: Duration(milliseconds: 600),
                   builder: (context, value, child) {
                     return Opacity(
                       opacity: value,
                       child: Padding(
-                        padding: EdgeInsets.only(top: value * 10),
+                        padding: EdgeInsets.only(top: value * 12),
                         child: child,
                       ),
                     );

@@ -29,20 +29,12 @@ class MyHomeScreen extends StatefulWidget {
 }
 
 class _MyHomeScreenState extends State<MyHomeScreen> {
-  // bool _error = false;
-  // bool _initialized = false;
-
   void _initializeFirebase() async {
     try {
       await Firebase.initializeApp();
-      // setState(() {
-      //   //  _initialized = true;
-      // });
     } catch (error) {
       print(error);
-      setState(() {
-        // _error = true;
-      });
+      setState(() {});
     }
   }
 
@@ -129,16 +121,16 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                 // _buildListTile(
                 //     Icons.sick_sharp, 'SigIn', Colors.black, signInWithGoogle),
 
-                _buildListTile(
-                    Icons.home, 'Home', Colors.red, MyHomeScreen.routeName),
+                _buildListTile(Icons.home, 'Home', Colors.deepOrangeAccent,
+                    MyHomeScreen.routeName),
                 _buildListTile(
                     Icons.event, 'Events', Colors.green, EventPage.routeName),
-                _buildListTile(
-                    Icons.people, 'Team', Colors.blue, TeamScreen.routeName),
-                _buildListTile(Icons.notifications_rounded, 'Notifications',
-                    Colors.deepOrange, NotificationScreen.routeName),
+                _buildListTile(Icons.people, 'Our Team', Colors.blue,
+                    TeamScreen.routeName),
                 _buildListTile(Icons.sticky_note_2, 'Learning', Colors.indigo,
                     LearningScreen.routeName),
+                _buildListTile(Icons.notifications_rounded, 'Notifications',
+                    Colors.pink, NotificationScreen.routeName),
 
                 _buildListTile(Icons.info_outline, 'About ', Color(0xffffd31d),
                     AboutScreen.routeName),
@@ -213,10 +205,11 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
             children: <Widget>[
               Header(),
               CardCarouse(),
-              SizedBox(height: 50.0),
+              SizedBox(height: 36.0),
               DomainBlock(),
-              SizedBox(height: 50.0),
+              SizedBox(height: 40.0),
               JoinUs(),
+              SizedBox(height: 20.0),
             ],
           ),
         ),

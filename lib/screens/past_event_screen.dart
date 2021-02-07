@@ -7,36 +7,7 @@ class PastEventsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-
-        /*  Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // FirebaseFirestore.instance
-          //     .collection('images/PHOSbooaLn7l12FjZnpD/eventImage')
-          //     .snapshots()
-          //     .listen((data) {
-          //   // print(data.docs[0]['imageUrl']);
-          //   data.docs.forEach((element) {
-          //     print(element['imageUrl']);
-          //   });
-          // });
-
-          FirebaseFirestore.instance
-              .collection('pastEvents/KEFnbdHmaa7bQyIOPWYk/events')
-              .snapshots()
-              .listen((data) {
-            // print(data.docs[0]['imageUrl']);
-            data.docs.forEach((element) {
-              print(element['imageUrl']);
-            });
-          });
-        },
-        child: Icon(Icons.add),
-      ),
-    body: */
-
-        StreamBuilder(
+    return StreamBuilder(
       stream: FirebaseFirestore.instance
           // .collection('images/PHOSbooaLn7l12FjZnpD/eventImage')
           .collection('pastEvents/KEFnbdHmaa7bQyIOPWYk/events')

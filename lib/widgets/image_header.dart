@@ -26,7 +26,7 @@ class ImageHeader extends StatelessWidget {
             vertical: 20.0,
           ),
           child: TweenAnimationBuilder(
-            curve: Curves.easeInOut,
+            curve: Curves.easeInCubic,
             child: Text(
               title,
               style: TextStyle(
@@ -36,7 +36,7 @@ class ImageHeader extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            duration: Duration(milliseconds: 600),
+            duration: Duration(milliseconds: 700),
             tween: Tween(begin: 0.0, end: 1.0),
             builder: (context, value, child) {
               return Opacity(

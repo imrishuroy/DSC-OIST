@@ -7,11 +7,15 @@ class OneEventContainer extends StatelessWidget {
     @required this.youtubeLink,
     @required this.imageUrl,
     @required this.date,
+    this.redTextLevel,
+    this.fontSize,
   }) : super(key: key);
 
   final youtubeLink;
   final imageUrl;
   final date;
+  final bool redTextLevel;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +47,10 @@ class OneEventContainer extends StatelessWidget {
         ),
         Text(
           date,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: redTextLevel == true ? Colors.red : Colors.white,
+            fontSize: fontSize == null ? 14.0 : fontSize,
+          ),
         ),
         SizedBox(
           height: 7.0,

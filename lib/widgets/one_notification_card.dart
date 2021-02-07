@@ -64,7 +64,7 @@ class OneNotificationCard extends StatelessWidget {
           ),
           Positioned(
             left: -10.0,
-            top: -4.0,
+            top: -6.0,
             child: Transform(
               child: Card(
                 color: Colors.pink,
@@ -75,12 +75,12 @@ class OneNotificationCard extends StatelessWidget {
                   ),
                   child: SizedBox(
                     height: 15,
-                    width: 50,
+                    width: 55,
                     child: Text(
                       date,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 12.0,
+                        fontSize: 11.6,
                       ),
                     ),
                   ),

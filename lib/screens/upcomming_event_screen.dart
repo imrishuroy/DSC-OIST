@@ -23,10 +23,14 @@ class UpcommingEvent extends StatelessWidget {
             final imageUrl = snapshot.data.docs[index]['imageUrl'];
             final date = snapshot.data.docs[index]['date'];
             final youtubeLink = snapshot.data.docs[index]['youtubeLink'];
+            final redTextLevel = snapshot.data.docs[index]['redTextLevel'];
+            final fontSize = snapshot.data.docs[index]['fontSize'];
             return OneEventContainer(
               imageUrl: imageUrl,
               date: date,
               youtubeLink: youtubeLink,
+              redTextLevel: redTextLevel,
+              fontSize: double.tryParse(fontSize),
             );
           },
         );

@@ -48,9 +48,9 @@ class JoinUs extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(width: 10.0),
+                SizedBox(width: 8.0),
                 Icon(
-                  FontAwesomeIcons.solidHandshake,
+                  FontAwesomeIcons.handsHelping,
                   color: Colors.white,
                 ),
                 SizedBox(width: 5.0),

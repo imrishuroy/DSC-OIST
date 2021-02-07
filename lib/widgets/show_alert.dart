@@ -34,7 +34,7 @@ Future<void> aboutDialog({
       title: TweenAnimationBuilder(
           child: Container(
             height: 40.0,
-            width: 20.0,
+            width: 30.0,
             child: Image.asset(avatar),
           ),
           tween: Tween(begin: 0.0, end: 1.0),
@@ -44,8 +44,10 @@ Future<void> aboutDialog({
               opacity: value,
               child: Container(
                 height: value * 70,
-                width: value * 30,
-                child: Image.asset(avatar),
+                width: value * 20,
+                child: Image.asset(
+                  avatar,
+                ),
               ),
             );
           }),

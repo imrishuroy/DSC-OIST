@@ -24,8 +24,12 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream:
-          FirebaseFirestore.instance.collection('notifications').snapshots(),
+      stream: FirebaseFirestore.instance
+          .collection('notifications')
+          .orderBy(
+            'numbering',
+          )
+          .snapshots(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Scaffold(

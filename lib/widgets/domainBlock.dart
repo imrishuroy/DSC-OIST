@@ -8,7 +8,7 @@ class DomainBlock extends StatelessWidget {
       child: Row(
         children: [
           TweenAnimationBuilder(
-            curve: Curves.easeIn,
+            curve: Curves.bounceOut,
             child: Container(
               margin: EdgeInsets.only(left: 25.0),
               height: 220,
@@ -16,7 +16,7 @@ class DomainBlock extends StatelessWidget {
               color: Colors.blue,
             ),
             tween: Tween(begin: 0.0, end: 1.0),
-            duration: Duration(seconds: 2),
+            duration: Duration(milliseconds: 500),
             builder: (context, value, child) {
               return Opacity(
                 opacity: value,
@@ -49,7 +49,7 @@ class DomainBlock extends StatelessWidget {
         ],
       ),
       tween: Tween(begin: 0.0, end: 1.0),
-      duration: Duration(seconds: 2),
+      duration: Duration(milliseconds: 500),
       builder: (context, value, child) {
         return Opacity(
           opacity: value,
@@ -86,13 +86,13 @@ class DomainRow extends StatelessWidget {
                       color: color,
                     ),
                     tween: Tween(begin: 0.0, end: 1.0),
-                    duration: Duration(seconds: 2),
+                    duration: Duration(seconds: 1),
                     builder: (context, value, child) {
                       return Opacity(
                         opacity: value,
                         child: Container(
                           child: child,
-                          width: value * 140,
+                          width: value * 165,
                         ),
                       );
                     }),
@@ -101,9 +101,10 @@ class DomainRow extends StatelessWidget {
                   domainTitle,
                   style: TextStyle(
                     color: Colors.white,
-                    fontFamily: 'AverialLibre',
+                    fontFamily: 'CabinSketch',
                     fontSize: 20.0,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.1,
                   ),
                 )
               ],
