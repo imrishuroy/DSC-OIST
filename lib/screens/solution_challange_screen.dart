@@ -1,6 +1,6 @@
 import 'package:dsc_oist/widgets/build_header.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SolutionChallange extends StatelessWidget {
   static String routeName = '/solution-challange';
@@ -17,28 +17,37 @@ class SolutionChallange extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   BuildOneSolutionItem(
-                      title:
-                          'RSVP to the upcoming events and view past event recordings.'),
-                  SizedBox(height: 15.0),
+                    title:
+                        'RSVP to the upcoming events and view past event recordings.',
+                    link: 'http://dsc.community.dev/2021-solution-challenge',
+                  ),
+                  SizedBox(height: 20.0),
                   BuildOneSolutionItem(
-                      title:
-                          'Overview of the Solution Challenge 2021 by Global Program Manager.'),
-                  SizedBox(height: 15.0),
+                    title:
+                        'Overview of the Solution Challenge 2021 by Global Program Manager.',
+                    link: 'https://youtu.be/LExFrzxCUuo',
+                  ),
+                  SizedBox(height: 20.0),
                   BuildOneSolutionItem(
                     title:
                         'Learn how you can come up with the ideas for the challenge.',
+                    link: 'https://youtu.be/50QQ6ksr8FE',
                   ),
-                  SizedBox(height: 15.0),
+                  SizedBox(height: 20.0),
                   BuildOneSolutionItem(
                     title: 'Example Project for Solution Challenge.',
+                    link: 'https://youtu.be/Wkaz5uw0Evo',
                   ),
-                  SizedBox(height: 15.0),
+                  SizedBox(height: 20.0),
                   BuildOneSolutionItem(
-                      title:
-                          'Learn more about the Sustainable Development Goals here'),
-                  SizedBox(height: 30.0),
+                    title:
+                        'Learn more about the Sustainable Development Goals here',
+                    link:
+                        'https://developers.google.com/community/dsc-solution-challenge/UN-goals',
+                  ),
+                  SizedBox(height: 35.0),
                   Text(
-                    'Learn how to design a project from scratch :-',
+                    '* Learn how to design a project from scratch :-',
                     style: TextStyle(
                       fontSize: 16.0,
                       color: Color(0xfff9f871),
@@ -71,6 +80,36 @@ class SolutionChallange extends StatelessWidget {
                         color: Color(0xffe40017),
                       ),
                       SizedBox(height: 25.0),
+                      SizedBox(height: 5.0),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 23.0,
+                          vertical: 10.0,
+                        ),
+                        child: Text(
+                          '* How to participate :-',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.yellow,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20.0),
+                      _participatePoints(title: 'Join a DSC near you'),
+                      SizedBox(height: 20.0),
+                      _participatePoints(title: 'Form a team upto 4 members'),
+                      SizedBox(height: 20.0),
+                      _participatePoints(title: 'Select a SDG'),
+                      SizedBox(height: 20.0),
+                      _participatePoints(title: 'Work on the solution'),
+                      SizedBox(height: 20.0),
+                      _participatePoints(title: 'Design the front end'),
+                      SizedBox(height: 20.0),
+                      _participatePoints(title: 'Design the backend'),
+                      SizedBox(height: 20.0),
+                      _participatePoints(
+                          title: 'Upload your solution with a demo video'),
+                      SizedBox(height: 25.0),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 23.0),
                         child: Row(
@@ -93,13 +132,14 @@ class SolutionChallange extends StatelessWidget {
                             )
                           ],
                         ),
-                      )
+                      ),
+                      SizedBox(height: 25.0),
                     ],
                   )
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -124,8 +164,21 @@ class SolutionChallange extends StatelessWidget {
 
 class BuildOneSolutionItem extends StatelessWidget {
   final String title;
+  final String link;
 
-  const BuildOneSolutionItem({Key key, this.title}) : super(key: key);
+  const BuildOneSolutionItem({
+    Key key,
+    this.title,
+    this.link,
+  }) : super(key: key);
+
+  void _urlLauncher(url) async {
+    if (await canLaunch(url)) {
+      launch(url);
+    } else {
+      print('Can\'t launch url');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -133,11 +186,14 @@ class BuildOneSolutionItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 23.0),
       child: Row(
         children: [
-          Icon(
-            Icons.radio_button_checked,
-            color: Colors.pink,
+          IconButton(
+            icon: Icon(
+              Icons.open_in_new_rounded,
+              color: Colors.pink,
+            ),
+            onPressed: () => _urlLauncher(link),
           ),
-          SizedBox(width: 10.0),
+          SizedBox(width: 23.0),
           Expanded(
             child: Text(
               title,
@@ -151,4 +207,29 @@ class BuildOneSolutionItem extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _participatePoints({String title}) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 23.0),
+    child: Row(
+      children: [
+        Icon(
+          //Icons.radio_button_checked,
+          Icons.radio_button_checked,
+          color: Colors.pink,
+        ),
+        SizedBox(width: 23.0),
+        Expanded(
+          child: Text(
+            title,
+            style: TextStyle(
+              fontSize: 16.0,
+              color: Colors.white,
+            ),
+          ),
+        )
+      ],
+    ),
+  );
 }

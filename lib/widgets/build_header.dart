@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BuildSolutionHeader extends StatelessWidget {
+  void _urlLauncher(url) async {
+    if (await canLaunch(url)) {
+      launch(url);
+    } else {
+      print('Can\'t launch url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,14 +45,20 @@ class BuildSolutionHeader extends StatelessWidget {
               //   color: Colors.pink,
               // ),
               SizedBox(width: 20.0),
-              Text(
-                'Register Here...',
-                style: TextStyle(
-                  fontSize: 23.0,
-                  color: Colors.blue,
-                  fontFamily: 'Harmattan',
+              GestureDetector(
+                onTap: () => _urlLauncher('http://goo.gle/solutionchallenge'),
+                child: Text(
+                  'Register Here...',
+                  style: TextStyle(
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1.2,
+                    color: Colors.blue,
+                    fontFamily: 'Harmattan',
+                  ),
                 ),
               ),
+
               SizedBox(width: 24.0),
             ],
           ),
