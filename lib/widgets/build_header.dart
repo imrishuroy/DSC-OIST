@@ -21,7 +21,7 @@ class BuildSolutionHeader extends StatelessWidget {
               vertical: 12.0,
             ),
             child: Text(
-              'This year the mission is to solve for one or more of the United Nations 17 Sustainable Development Goals using Google technology. So here’s your chance to put on your thinking caps and build a solution to help improve the world with Google technology. Select winners will receive prizes including a Google Chromebook, a meeting with a Google executive, and more!',
+              'The 2021 Solution Challenge mission is to solve for one or more of the United Nations 17 Sustainable Development Goals using Google technology.',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 15.0,
@@ -47,6 +47,7 @@ class BuildSolutionHeader extends StatelessWidget {
               SizedBox(width: 24.0),
             ],
           ),
+          SizedBox(height: 20),
         ],
       ),
     );
