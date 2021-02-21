@@ -2,6 +2,7 @@ import 'package:dsc_oist/screens/about_screen.dart';
 import 'package:dsc_oist/screens/learning_screen.dart';
 
 import 'package:dsc_oist/screens/notification_screen.dart';
+import 'package:dsc_oist/screens/solution_challange_screen.dart';
 import 'package:dsc_oist/widgets/circle_indicator.dart';
 
 import 'package:dsc_oist/screens/past_event_screen.dart';
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MySplashScreen(),
+      // home: MySplashScreen(),
+      home: SolutionChallange(),
       routes: {
         TeamScreen.routeName: (ctx) => TeamScreen(),
         EventPage.routeName: (ctx) => EventPage(),
