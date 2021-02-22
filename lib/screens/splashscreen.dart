@@ -11,7 +11,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 3,
+      seconds: 1,
       navigateAfterSeconds: MyHomeScreen(),
       title: Text(
         'Welcome to DSC OIST',

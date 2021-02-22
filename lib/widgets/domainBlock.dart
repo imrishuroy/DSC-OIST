@@ -8,7 +8,7 @@ class DomainBlock extends StatelessWidget {
       child: Row(
         children: [
           TweenAnimationBuilder(
-            curve: Curves.bounceOut,
+            curve: Curves.ease,
             child: Container(
               margin: EdgeInsets.only(left: 25.0),
               height: 220,

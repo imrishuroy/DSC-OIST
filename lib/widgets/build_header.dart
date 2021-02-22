@@ -30,7 +30,7 @@ class BuildSolutionHeader extends StatelessWidget {
               vertical: 12.0,
             ),
             child: Text(
-              'The 2021 Solution Challenge mission is to solve for one or more of the United Nations 17 Sustainable Development Goals using Google technology.',
+              'The 2021 Solution Challenge mission is to solve one or more of the United Nations 17 Sustainable Development Goals using Google technology.',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 15.0,
@@ -46,13 +46,15 @@ class BuildSolutionHeader extends StatelessWidget {
               // ),
               SizedBox(width: 20.0),
               GestureDetector(
-                onTap: () => _urlLauncher('http://goo.gle/solutionchallenge'),
+                onTap: () => _urlLauncher(
+                    'https://docs.google.com/forms/d/e/1FAIpQLSeSDyP0MkLusZchFAKOE4qzoDIG5Yg4XSVbFK9EZE5TYejpbA/viewform'),
                 child: Text(
                   'Register Here...',
                   style: TextStyle(
                     fontSize: 22.0,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 1.2,
+                    //color: Colors.blue,
                     color: Colors.blue,
                     fontFamily: 'Harmattan',
                   ),

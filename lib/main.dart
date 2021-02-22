@@ -33,8 +33,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      // home: MySplashScreen(),
-      home: SolutionChallange(),
+      home: MySplashScreen(),
       routes: {
         TeamScreen.routeName: (ctx) => TeamScreen(),
         EventPage.routeName: (ctx) => EventPage(),
@@ -45,6 +44,7 @@ class MyApp extends StatelessWidget {
         CircleIndicator.routeName: (ctx) => CircleIndicator(),
         LearningScreen.routeName: (ctx) => LearningScreen(),
         NotificationScreen.routeName: (ctx) => NotificationScreen(),
+        SolutionChallange.routeName: (ctx) => SolutionChallange(),
       },
     );
   }

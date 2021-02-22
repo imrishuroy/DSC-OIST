@@ -4,6 +4,7 @@ import 'package:dsc_oist/screens/event_page.dart';
 
 import 'package:dsc_oist/screens/learning_screen.dart';
 import 'package:dsc_oist/screens/notification_screen.dart';
+import 'package:dsc_oist/screens/solution_challange_screen.dart';
 
 import 'package:dsc_oist/screens/team_screen.dart';
 import 'package:dsc_oist/widgets/domainBlock.dart';
@@ -121,7 +122,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                 // _buildListTile(
                 //     Icons.sick_sharp, 'SigIn', Colors.black, signInWithGoogle),
 
-                _buildListTile(Icons.home, 'Home', Colors.deepOrangeAccent,
+                _buildListTile(Icons.home, 'Home', Colors.deepOrange,
                     MyHomeScreen.routeName),
                 _buildListTile(
                     Icons.event, 'Events', Colors.green, EventPage.routeName),
@@ -131,9 +132,15 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                     LearningScreen.routeName),
                 _buildListTile(Icons.notifications_rounded, 'Notifications',
                     Colors.pink, NotificationScreen.routeName),
+                _buildListTile(
+                  Icons.wb_incandescent,
+                  'Solution Challenge',
+                  Color(0xffff7b54),
+                  SolutionChallange.routeName,
+                ),
 
-                _buildListTile(Icons.info_outline, 'About ', Color(0xffffd31d),
-                    AboutScreen.routeName),
+                _buildListTile(Icons.info_outline, 'About Us',
+                    Color(0xff12e2a3), AboutScreen.routeName),
               ],
             ),
           ),

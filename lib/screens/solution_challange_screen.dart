@@ -1,9 +1,18 @@
 import 'package:dsc_oist/widgets/build_header.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SolutionChallange extends StatelessWidget {
   static String routeName = '/solution-challange';
+  void _urlLauncher(url) async {
+    if (await canLaunch(url)) {
+      launch(url);
+    } else {
+      print('Can\'t launch url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +39,7 @@ class SolutionChallange extends StatelessWidget {
                   SizedBox(height: 20.0),
                   BuildOneSolutionItem(
                     title:
-                        'Learn how you can come up with the ideas for the challenge.',
+                        'Learn how you can come up with ideas for the challenge.',
                     link: 'https://youtu.be/50QQ6ksr8FE',
                   ),
                   SizedBox(height: 20.0),
@@ -62,22 +71,22 @@ class SolutionChallange extends StatelessWidget {
                     children: [
                       _buildNumberedText(
                         title: '1. IDENTIFYING A PROBLEM',
-                        color: Colors.green,
+                        color: Color(0xfff14668),
                       ),
                       SizedBox(height: 17.0),
                       _buildNumberedText(
                         title: '2. IDENTIFYING A SOLUTION',
-                        color: Colors.orange,
-                      ),
-                      SizedBox(height: 17.0),
-                      _buildNumberedText(
-                        title: '3. DESIGNING THE INTERFACE',
                         color: Colors.blue,
                       ),
                       SizedBox(height: 17.0),
                       _buildNumberedText(
-                        title: '4. DESIGNING THE TECHNOLOGY ',
-                        color: Color(0xffe40017),
+                        title: '3. DESIGNING THE INTERFACE',
+                        color: Color(0xff16c79a),
+                      ),
+                      SizedBox(height: 17.0),
+                      _buildNumberedText(
+                        title: '4. DESIGNING THE TECHNOLOGY',
+                        color: Color(0xffff7b54),
                       ),
                       SizedBox(height: 25.0),
                       SizedBox(height: 5.0),
@@ -97,7 +106,8 @@ class SolutionChallange extends StatelessWidget {
                       SizedBox(height: 20.0),
                       _participatePoints(title: 'Join a DSC near you'),
                       SizedBox(height: 20.0),
-                      _participatePoints(title: 'Form a team upto 4 members'),
+                      _participatePoints(
+                          title: 'Form a team of up to 4 members'),
                       SizedBox(height: 20.0),
                       _participatePoints(title: 'Select a SDG'),
                       SizedBox(height: 20.0),
@@ -110,29 +120,16 @@ class SolutionChallange extends StatelessWidget {
                       _participatePoints(
                           title: 'Upload your solution with a demo video'),
                       SizedBox(height: 25.0),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 23.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Dowload the complete PDF',
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                fontFamily: 'OpenSans',
-                                color: Color(0xffd3e0ea),
-                              ),
-                            ),
-                            IconButton(
-                              icon: Icon(
-                                Icons.picture_as_pdf,
-                                color: Colors.red,
-                              ),
-                              onPressed: () {},
-                            )
-                          ],
-                        ),
+                      _buildLinkRow(
+                        title: 'Watch our intro video',
+                        icon: FontAwesomeIcons.youtube,
+                        link: 'https://www.youtube.com/watch?v=-HAWM-qksw0',
                       ),
+                      _buildLinkRow(
+                          title: 'Dowload the complete PDF',
+                          icon: Icons.picture_as_pdf,
+                          link:
+                              'https://drive.google.com/file/d/119AgP1VQceJFHjCrYI-mxK9UjqKjRk-W/view?usp=sharing'),
                       SizedBox(height: 25.0),
                     ],
                   )
@@ -140,6 +137,32 @@ class SolutionChallange extends StatelessWidget {
               ),
             ),
           ),
+        ],
+      ),
+    );
+  }
+
+  Padding _buildLinkRow({String title, IconData icon, String link}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 23.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 18.0,
+              fontFamily: 'OpenSans',
+              color: Color(0xffd3e0ea),
+            ),
+          ),
+          IconButton(
+            icon: Icon(
+              icon,
+              color: Colors.red,
+            ),
+            onPressed: () => _urlLauncher(link),
+          )
         ],
       ),
     );
@@ -165,11 +188,13 @@ class SolutionChallange extends StatelessWidget {
 class BuildOneSolutionItem extends StatelessWidget {
   final String title;
   final String link;
+  final IconData icon;
 
   const BuildOneSolutionItem({
     Key key,
     this.title,
     this.link,
+    this.icon: Icons.open_in_new_rounded,
   }) : super(key: key);
 
   void _urlLauncher(url) async {
@@ -188,7 +213,7 @@ class BuildOneSolutionItem extends StatelessWidget {
         children: [
           IconButton(
             icon: Icon(
-              Icons.open_in_new_rounded,
+              icon,
               color: Colors.pink,
             ),
             onPressed: () => _urlLauncher(link),
