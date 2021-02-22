@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BuildSolutionHeader extends StatelessWidget {
@@ -12,17 +13,52 @@ class BuildSolutionHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.grey[250],
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
     return Container(
       child: Column(
         children: [
-          Container(
-            height: 225.0,
-            width: double.infinity,
-            child: Image.asset(
-              'assets/solution.jpg',
-              fit: BoxFit.cover,
+          // Container(
+          //   height: 225.0,
+          //   width: double.infinity,
+          //   child: Image.asset(
+          //     'assets/solution.jpg',
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
+          TweenAnimationBuilder(
+            curve: Curves.ease,
+            child: Container(
+              // height: 225.0,
+              height: 100.0,
+              width: double.infinity,
+              child: Image.asset(
+                'assets/solution.jpg',
+                fit: BoxFit.cover,
+              ),
             ),
+            tween: Tween(begin: 0.0, end: 1.0),
+            duration: Duration(milliseconds: 500),
+            builder: (context, value, child) {
+              return Opacity(
+                opacity: value,
+                child: Container(
+                  // height: 225.0,
+                  height: 100 * value * 2.3,
+                  width: double.infinity,
+                  child: Image.asset(
+                    'assets/solution.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              );
+            },
           ),
+
           SizedBox(height: 20.0),
           Padding(
             padding: const EdgeInsets.symmetric(
