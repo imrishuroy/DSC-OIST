@@ -16,7 +16,7 @@ class DomainBlock extends StatelessWidget {
               color: Colors.blue,
             ),
             tween: Tween(begin: 0.0, end: 1.0),
-            duration: Duration(milliseconds: 500),
+            duration: Duration(milliseconds: 800),
             builder: (context, value, child) {
               return Opacity(
                 opacity: value,

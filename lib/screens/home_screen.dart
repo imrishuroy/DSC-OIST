@@ -70,6 +70,9 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
       if (view == 'notification-page') {
         return Navigator.pushNamed(context, NotificationScreen.routeName);
       }
+      if (view == 'solution-challenge') {
+        return Navigator.pushNamed(context, SolutionChallange.routeName);
+      }
     }
   }
 
@@ -116,32 +119,30 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
           ),
           child: Padding(
             padding: const EdgeInsets.only(left: 15.0, top: 15.0, bottom: 15.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // _buildListTile(
-                //     Icons.sick_sharp, 'SigIn', Colors.black, signInWithGoogle),
-
-                _buildListTile(Icons.home, 'Home', Colors.deepOrange,
-                    MyHomeScreen.routeName),
-                _buildListTile(
-                    Icons.event, 'Events', Colors.green, EventPage.routeName),
-                _buildListTile(Icons.people, 'Our Team', Colors.blue,
-                    TeamScreen.routeName),
-                _buildListTile(Icons.sticky_note_2, 'Learning', Colors.indigo,
-                    LearningScreen.routeName),
-                _buildListTile(Icons.notifications_rounded, 'Notifications',
-                    Colors.pink, NotificationScreen.routeName),
-                _buildListTile(
-                  Icons.wb_incandescent,
-                  'Solution Challenge',
-                  Color(0xffff7b54),
-                  SolutionChallange.routeName,
-                ),
-
-                _buildListTile(Icons.info_outline, 'About Us',
-                    Color(0xff12e2a3), AboutScreen.routeName),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _buildListTile(Icons.home, 'Home', Colors.deepOrange,
+                      MyHomeScreen.routeName),
+                  _buildListTile(
+                      Icons.event, 'Events', Colors.green, EventPage.routeName),
+                  _buildListTile(Icons.people, 'Our Team', Colors.blue,
+                      TeamScreen.routeName),
+                  _buildListTile(Icons.sticky_note_2, 'Learning', Colors.indigo,
+                      LearningScreen.routeName),
+                  _buildListTile(Icons.notifications_rounded, 'Notifications',
+                      Colors.pink, NotificationScreen.routeName),
+                  _buildListTile(
+                    Icons.wb_incandescent,
+                    'Solution Challenge',
+                    Color(0xffff7b54),
+                    SolutionChallange.routeName,
+                  ),
+                  _buildListTile(Icons.info_outline, 'About Us',
+                      Color(0xff12e2a3), AboutScreen.routeName),
+                ],
+              ),
             ),
           ),
         );
